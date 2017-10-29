@@ -132,12 +132,12 @@ public class CrudPartido extends Conexion {
         List<Equipo> lVisitante = new ArrayList<>();
         try {
             this.conectar();
-            sql = "select tipoequipo from equipo";
+            sql = "select nombre from equipo where tipoequipo='Visitante'";
             pre = this.getCon().prepareStatement(sql);
             res = pre.executeQuery();
             while (res.next()) {
                 Equipo par = new Equipo();
-                par.setTipoEq(res.getString("eqvisitante"));
+                par.setNombre(res.getString("nombre"));
                 lVisitante.add(par);
             }
         } catch (Exception e) {
@@ -146,16 +146,16 @@ public class CrudPartido extends Conexion {
         return lVisitante;
     }
 
-    public List<Partido> Local() throws Exception {
-        List<Partido> lLocal = new ArrayList<>();
+    public List<Equipo> Local() throws Exception {
+        List<Equipo> lLocal = new ArrayList<>();
         try {
             this.conectar();
-            sql = "select eqlocal from partido";
+            sql = "select nombre from equipo where tipoequipo='Local';";
             pre = this.getCon().prepareStatement(sql);
             res = pre.executeQuery();
             while (res.next()) {
-                Partido par = new Partido();
-                par.setEqLocal(res.getString("eqlocal"));
+                Equipo par = new Equipo();
+                par.setNombre(res.getString("nombre"));
                 lLocal.add(par);
             }
         } catch (Exception e) {
@@ -164,16 +164,16 @@ public class CrudPartido extends Conexion {
         return lLocal;
     }
 
-    public List<Partido> mVisitante() throws Exception {
-        List<Partido> mVisi = new ArrayList<>();
+    public List<Equipo> mVisitante() throws Exception {
+        List<Equipo> mVisi = new ArrayList<>();
         try {
             this.conectar();
-            sql = "select marcadorvisitante from partido";
+            sql = "select cantgoles from equipo where tipoequipo='Visitante';";
             pre = this.getCon().prepareStatement(sql);
             res = pre.executeQuery();
             while (res.next()) {
-                Partido par = new Partido();
-                par.setMarcadorVisi(res.getInt("marcadorvisitante"));
+                Equipo par = new Equipo();
+                par.setCantGoles(res.getInt("cantgoles"));
                 mVisi.add(par);
             }
         } catch (Exception e) {
@@ -182,16 +182,16 @@ public class CrudPartido extends Conexion {
         return mVisi;
     }
 
-    public List<Partido> mLocal() throws Exception {
-        List<Partido> mLocal = new ArrayList<>();
+    public List<Equipo> mLocal() throws Exception {
+        List<Equipo> mLocal = new ArrayList<>();
         try {
             this.conectar();
-            sql = "select marcadorlocal from partido";
+            sql = "select cantgoles from equipo where tipoequipo='Local';";
             pre = this.getCon().prepareStatement(sql);
             res = pre.executeQuery();
             while (res.next()) {
-                Partido par = new Partido();
-                par.setMarcadorLocal(res.getInt("marcadorlocal"));
+                Equipo par = new Equipo();
+                par.setCantGoles(res.getInt("cantgoles"));
                 mLocal.add(par);
             }
         } catch (Exception e) {

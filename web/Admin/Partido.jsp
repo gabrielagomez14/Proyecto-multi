@@ -131,24 +131,40 @@
                     <div class="form-group"  >
                     <label class="control-label col-xs-3" >Codigo de Equipo</label>
                     <div class="col-xs-7">
-                        <select class="form-control" id="sel1" name="cEq">
-                            <option value="1">1</option>
-                        </select>
+                        <%                            
+                            CrudPartido obj1 = new CrudPartido();
+                            Object m = obj1.contar(obj1);
+                        %>
+                        <input type="text" class="form-control" name="cEq" value="<%=m%>" placeholder="Ingrese su codigo de Arbitro" required>
                     </div>
                 </div>
 
                 <div class="form-group input-group" >
                     <label for="sel1" class="control-label col-xs-2">Equipo Visitante</label>
                     <div class="col-xs-4" > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <select class="form-control" id="sel1" name="eqLocal">
-
+                        <select class="form-control" id="sel1" name="eqVisitante">
+                            <%
+                                List<Equipo>leq= cpar.Visitante();
+                                for(Equipo par:leq)
+                                {
+                            %>
+                            <option value="<%=par.getIdEq()%>"><%=par.getNombre()%></option>
+                            <%
+                            }%>
                         </select>
                     </div>
                     <label for="sel1" class="control-label col-xs-2">Equipo Local</label>
                     <div class="col-xs-4"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <select class="form-control" id="sel1" name="eqVisi">
-
+                        <select class="form-control" id="sel1" name="eqLocal">
+                            <%
+                                List<Equipo>leql= cpar.Local();
+                                for(Equipo par:leql)
+                                {
+                            %>
+                            <option value="<%=par.getIdEq()%>"><%=par.getNombre()%></option>
+                            <%
+                            }%>
                         </select>
                     </div>
                 </div>
@@ -156,29 +172,55 @@
                     <label for="sel1" class="control-label col-xs-2">Marcador Eq Local</label>
                     <div class="col-xs-4" > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <select class="form-control" id="sel1" name="mEqLo">
-
+                            <%
+                                List<Equipo>lml= cpar.mLocal();
+                                for(Equipo par:lml)
+                                {
+                            %>
+                            <option value="<%=par.getIdEq()%>"><%=par.getCantGoles()%></option>
+                            <%
+                            }%>
                         </select>
                     </div>
                     <label for="sel1" class="control-label col-xs-2">Marcador Equipo Visitante</label>
                     <div class="col-xs-4"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <select class="form-control" id="sel1" name="detalle">
-
+                        <select class="form-control" id="sel1" name="mEqVisi">
+                            <%
+                                List<Equipo>lmv= cpar.mVisitante();
+                                for(Equipo par:lmv)
+                                {
+                            %>
+                            <option value="<%=par.getIdEq()%>"><%=par.getCantGoles()%></option>
+                            <%
+                            }%>
                         </select> 
                     </div>
                 </div>
                 <div class="form-group input-group" >
                     <label for="sel1" class="control-label col-xs-2">Arbitro</label>
                     <div class="col-xs-4" > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <select class="form-control" id="sel1" name="detalle">
-
-                        </select>        
+                        <select class="form-control" id="sel1" name="arbitro">
+                            <%
+                                List<Arbitro>lar=cpar.viewarbi();
+                                for(Arbitro dp:lar)
+                                {
+                            %>
+                            <option value="<%=dp.getIdArbitro()%>"><%=dp.getNombre()%></option>
+                        </select>   
+                            <%}%>
                     </div>
                     <label for="sel1" class="control-label col-xs-2">Codigo de Detalle</label>
                     <div class="col-xs-4"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <select class="form-control" id="sel1" name="detalle">
-
+                            <%
+                                List<DetallePartido>lde=cpar.viewDet();
+                                for(DetallePartido dp:lde)
+                                {
+                            %>
+                            <option value="<%=dp.getIdDetalle() %>"><%=dp.getIdDetalle() %></option>
+                            <%}%>
                         </select>  
                     </div>
                 </div>

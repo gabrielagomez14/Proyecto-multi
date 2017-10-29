@@ -45,8 +45,8 @@ public class OperacionesPartido extends HttpServlet {
             par.setNumGoles(Integer.parseInt(request.getParameter("cGoles")));
             par.setFecha(request.getParameter("fecha"));
             par.setIdEquipo(Integer.parseInt(request.getParameter("cEq")));
-            par.setEqVisitante(request.getParameter("eqLocal"));
-            par.setEqLocal(request.getParameter("eqVisi"));
+            par.setEqVisitante(request.getParameter("eqVisitante"));
+            par.setEqLocal(request.getParameter("eqLocal"));
             par.setMarcadorVisi(Integer.parseInt(request.getParameter("mEqLo")));
             par.setMarcadorLocal(Integer.parseInt(request.getParameter("mEqVisi")));
             par.setIdArb(Integer.parseInt(request.getParameter("arbitro")));
@@ -65,7 +65,7 @@ public class OperacionesPartido extends HttpServlet {
                val="Datos Eliminar Correctamente";
             }
             request.setAttribute("valor", val);
-            request.getRequestDispatcher("partidos.jsp").forward(request, response);
+            request.getRequestDispatcher("Partido.jsp").forward(request, response);
         } catch (Exception e) 
         {
             out.print(e.toString());

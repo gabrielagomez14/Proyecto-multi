@@ -40,9 +40,6 @@
                         <li><a href="detallePartido.jsp">Usuarios</a>
                         </li>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right" >
-                        <li><a href="../index.jsp?cerrar=true"><span class="glyphicon glyphicon-log-in"></span><font> Cerrar Sesion</font></a></li>
-                    </ul>
                 </div>     
             </div>    
         </nav>      
