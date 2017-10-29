@@ -215,15 +215,17 @@
                         </td>
                         <td hidden=""><label class="control-label col-xs-3" >id Equipo</label></td>
                         <td hidden="">
-                            <select class="form-control" id="sel1" name="idEq">
-                                <option value="1">1</option>
-                            </select>
+                             <%
+                                CrudTorneo obj1 = new CrudTorneo();
+                                Object m = obj1.contar(obj1);
+                            %>
+                            <input type="text" class="form-control" name="idEq" value="<%=m %>"  placeholder="Codigo Torneo" required>
                         </td>
                         <td>
                             <label class="control-label col-xs-3" >Nombre de Jugador</label>
                         </td>
                         <td>
-                            <select class="form-control" id="sel1" name="descenso">
+                            <select class="form-control" id="sel1" name="jugador">
                                 <option value="">Seleccione</option>
                                 <%
                                     List<Jugador> lju = ct.viewJugador();
@@ -243,7 +245,7 @@
                                     List<Jornada> leq7 = ct.viewJornada();
                                     for (Jornada jor : leq7) {
                                 %>
-                                <option value="<%=jor.getFechaInicio()%>"><%=jor.getFechaInicio()%></option>
+                                <option value="<%=jor.getIdJornada()%>"><%=jor.getFechaInicio()%></option>
                                 <% }%>
                             </select>
                         </td>

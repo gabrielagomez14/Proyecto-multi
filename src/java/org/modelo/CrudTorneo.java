@@ -90,9 +90,9 @@ public class CrudTorneo extends Conexion
         try 
         {
             this.conectar();
-            sql="UPDATE public.torneo\n" 
-            +"SET nomtorneo=?, ubicacion=?, canteq=?, campeon=?, goleador=?, seglugar=?, terlugar=?, cuarlugar=?, fechaini=?, fechafin=?, descenso=?, idequipo=?, idjugador=?, idjornada=?\n"
-            +"WHERE idtorneo=?"; 
+            sql="UPDATE public.torneo\n" +
+"	SET  nomtorneo=?, ubicacion=?, canteq=?, campeon=?, goleador=?, seglugar=?, terlugar=?, cuarlugar=?, fechaini=?, fechafin=?, descenso=?, idequipo=?, idjugador=?, idjornada=?\n" +
+"	WHERE idtorneo=?"; 
             pre=this.getCon().prepareStatement(sql);
             pre.setString(1, tor.getNombre());
             pre.setString(2, tor.getUbicacion());

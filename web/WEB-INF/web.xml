@@ -37,10 +37,6 @@
         <servlet-class>org.controlador.OperacionesPartido</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>OperacionesTorneo</servlet-name>
-        <servlet-class>org.controlador.OperacionesTorneo</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>OperacionesUsuarios</servlet-name>
         <servlet-class>org.controlador.OperacionesUsuarios</servlet-class>
     </servlet>
@@ -96,10 +92,6 @@
     <servlet-mapping>
         <servlet-name>OperacionesPartido</servlet-name>
         <url-pattern>/Admin/operacionesPartido</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>OperacionesTorneo</servlet-name>
-        <url-pattern>/Admin/operacionesTorneo</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>OperacionesUsuarios</servlet-name>
