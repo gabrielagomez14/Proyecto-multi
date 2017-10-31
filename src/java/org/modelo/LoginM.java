@@ -8,7 +8,7 @@ import org.conexion.Conexion;
  Fecha:13/10/2017
  Version:1.0
  Copyright:UEFA
- * @author Ale Gomez, Alexander Lue, Carlos Paniagua
+ * @author Ale Gomez
  */
 public class LoginM  extends Conexion
 {

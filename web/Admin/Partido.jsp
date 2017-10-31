@@ -1,7 +1,7 @@
 <%-- 
     Document   : Partido
     Created on : Oct 20, 2017, 2:13:18 PM
-    Author     :  Ale Gomez, Alexander Lue, Carlos Paniagua
+    Author     :  Ale Gomez
 --%>
 
 <%@page import="java.util.List"%>

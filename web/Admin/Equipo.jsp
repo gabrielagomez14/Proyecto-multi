@@ -1,7 +1,7 @@
 <%-- 
     Document   : Equipo
     Created on : Oct 18, 2017, 10:54:16 AM
-    Author     :  Ale Gomez, Alexander Lue, Carlos Paniagua
+    Author     :  Ale Gomez
 --%>
 
 <%@page import="org.modelo.*"%>

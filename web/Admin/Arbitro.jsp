@@ -1,7 +1,7 @@
 <%-- 
     Document   : Arbitro
     Created on : Oct 14, 2017, 2:17:59 PM
-    Author     :Ale Gomez, Alexander Lue, Carlos Paniagua
+    Author     :Ale Gomez
 --%>
 
 <%@page import="org.modelo.*"%>

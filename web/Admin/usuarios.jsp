@@ -1,7 +1,7 @@
 <%-- 
     Document   : usuarios
     Created on : Oct 28, 2017, 2:50:30 PM
-    Author     :  Ale Gomez, Alexander Lue, Carlos Paniagua
+    Author     :  Ale Gomez
 --%>
 
 <%@page import="org.modelo.Usuarios"%>

@@ -1,7 +1,7 @@
 <%-- 
     Document   : Incidencias
     Created on : Oct 18, 2017, 11:43:54 AM
-    Author     :  Ale Gomez, Alexander Lue, Carlos Paniagua
+    Author     :  Ale Gomez
 --%>
 
 <%@page import="org.modelo.*"%>

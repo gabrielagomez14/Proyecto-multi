@@ -1,7 +1,7 @@
 <%-- 
     Document   : detalle
     Created on : Oct 22, 2017, 3:26:17 PM
-    Author     :  Ale Gomez, Alexander Lue, Carlos Paniagua
+    Author     :  Ale Gomez
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

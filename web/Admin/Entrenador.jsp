@@ -1,7 +1,7 @@
 <%-- 
     Document   : Entrenador
     Created on : Oct 18, 2017, 10:07:30 AM
-    Author     :  Ale Gomez, Alexander Lue, Carlos Paniagua
+    Author     :  Ale Gomez
 --%>
 
 <%@page import="org.modelo.*"%>

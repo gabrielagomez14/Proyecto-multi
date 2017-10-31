@@ -19,7 +19,7 @@ import org.modelo.DetallePartido;
  * Fecha:17/10/2017
  * Version:1.0
  * Copyright:ITCA-FEPADE
- * @author Ale Gomez, Alexander Lue, Carlos Paniagua
+ * @author Ale Gomez
  */
 public class OperacionesDetalles extends HttpServlet {
 

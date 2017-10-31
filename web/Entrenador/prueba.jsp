@@ -1,7 +1,7 @@
 <%-- 
     Document   : prueba
     Created on : Oct 14, 2017, 12:38:31 PM
-    Author     : monterroso
+    Author     : Ale Gomez
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

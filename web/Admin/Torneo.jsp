@@ -1,7 +1,7 @@
 <%-- 
     Document   : Torneo
     Created on : Oct 20, 2017, 3:58:42 PM
-    Author     :  Ale Gomez, Alexander Lue, Carlos Paniagua
+    Author     :  Ale Gomez
 --%>
 
 <%@page import="org.modelo.*"%>
