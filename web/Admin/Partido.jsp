@@ -19,7 +19,7 @@
         <link rel="stylesheet" href="../css/tables.css" />
         <title>Mantenimiento de Partido</title>
         <script Language='JavaScript'>
-            function cargar(id, nom, parti, goles, fecha, cEqui, eqlocal, eqVisi,mVisi,mLoca,arbi,detalle)
+            function cargar(id, nom, parti, goles, fecha, cEqui, eqVisi,eqlocal, mVisi, mLoca, arbi, detalle)
             {
                 document.frmPartido.id.value = id;
                 document.frmPartido.nombre.value = nom;
@@ -27,8 +27,8 @@
                 document.frmPartido.cGoles.value = goles;
                 document.frmPartido.fecha.value = fecha;
                 document.frmPartido.cEq.value = cEqui;
-                document.frmPartido.eqLocal.value = eqlocal;
                 document.frmPartido.eqVisi.value = eqVisi;
+                document.frmPartido.eqLocal.value = eqlocal;
                 document.frmPartido.mEqLo.value = mVisi;
                 document.frmPartido.mEqVisi.value = mLoca;
                 document.frmPartido.arbitro.value = arbi;
@@ -58,27 +58,27 @@
                 <div class="collapse navbar-collapse" id="navbar-1">
                     <ul class="nav navbar-nav">
 
-                       <a class="navbar-brand" href="../index.jsp"><font color="white">SIVAR LIGA</font></a>
-                    <li><a href="Arbitro.jsp">Arbitro</a>
-                    </li>
-                    <li><a href="Detalle.jsp">Detalle de Partido</a>
-                    </li>
-                    <li><a href="Entrenador.jsp">Entrenador</a>
-                    </li>
-                    <li><a href="Equipo.jsp">Equipo</a>
-                    </li>
-                    <li><a href="Incidencias.jsp">Incidencias</a>
-                    </li>
-                    <li><a href="Jornada.jsp">Jornada</a>
-                    </li>
-                    <li><a href="#">Partido</a>
-                    </li>
-                    <li><a href="Torneo.jsp">Torneo</a>
-                    </li>
-                    <li><a href="jugador.jsp">Jugador</a>
-                    </li>
-                    <li><a href="usuarios.jsp">Usuarios</a>
-                    </li>
+                        <a class="navbar-brand" href="../index.jsp"><font color="white">SIVAR LIGA</font></a>
+                        <li><a href="Arbitro.jsp">Arbitro</a>
+                        </li>
+                        <li><a href="Detalle.jsp">Detalle de Partido</a>
+                        </li>
+                        <li><a href="Entrenador.jsp">Entrenador</a>
+                        </li>
+                        <li><a href="Equipo.jsp">Equipo</a>
+                        </li>
+                        <li><a href="Incidencias.jsp">Incidencias</a>
+                        </li>
+                        <li><a href="Jornada.jsp">Jornada</a>
+                        </li>
+                        <li><a href="#">Partido</a>
+                        </li>
+                        <li><a href="Torneo.jsp">Torneo</a>
+                        </li>
+                        <li><a href="jugador.jsp">Jugador</a>
+                        </li>
+                        <li><a href="usuarios.jsp">Usuarios</a>
+                        </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right" >
                         <li><a href="../index.jsp?cerrar=true"><span class="glyphicon glyphicon-log-in"></span><font> Cerrar Sesion</font></a></li>
@@ -94,214 +94,250 @@
     CrudPartido cpar = new CrudPartido();
 
 %>
-<body><div class="well">
-        <div class="container"><br>
-            <form action="operacionesPartido" name="frmPartido" method="post" class="form-horizontal">
+<body><div class="well"><center>
+            <div class="container"><br>
+                <form action="operacionesPartido" name="frmPartido" method="post" class="form-horizontal">
+                    <table>
+                        <thead>
+                            <tr >
+                                <td>
+                                    <label class="control-label col-xs-3" >Codigo de Partido</label>
+                                </td>
+                                <td>
+                                    <div class="col-xs-9">
+                                        <%                            CrudPartido obj = new CrudPartido();
+                                            Object n = obj.contar(obj);
+                                        %>
+                                        <input type="text" class="form-control" name="id" value="<%=n%>" placeholder="Ingrese su codigo de Arbitro" required>
+                                    </div>
+                                </td>
+                                <td>
+                                    <label class="control-label col-xs-3" >Nombre de Partido</label>
+                                </td>
+                                <td>
+                                    <div class="col-xs-15">
+                                        <input type="text" class="form-control" name="nombre" value="" placeholder="Ingrese su nombre" required>
+                                    </div>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <label for="sel1" class="control-label col-xs-3">Tipo de Partido</label>
+                                </td>
+                                <td>
+                                    <div class="col-xs-15"> 
+                                        <select class="form-control" id="sel1" name="tPartido">
+                                            <option value="">Seleccione</option>
+                                            <option value="Futbol Sala">Futbol Sala</option>
+                                            <option value="Futbol 11">Futbol 11</option>
+                                            <option value="Partido Amistosos">Partido Amistosos</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td>
+                                    <label for="sel1" class="control-label col-xs-2">Cantida de Goles</label>
+                                </td>
+                                <td>
+                                    <div class="col-xs-15">
+                                        <input type="number" class="form-control" name="cGoles" value="" placeholder="Ingrese su nombre" required>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    <label for="sel1" class="control-label col-xs-2">Fecha Partido</label>
+                                    <div class="col-xs-6"> 
+                                        <div class="col-lg">
+                                            <input type="date" class="form-control" name="fecha" value="" placeholder="Ingrese su nombre" required>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr><tr>
+                                <td hidden="true">
+                                    <label class="control-label col-xs-3" >Codigo de Equipo</label>
+                                </td>
+                                <td hidden="true">
+                                    <div class="form-group">
 
-                <div class="form-group">
-                    <label class="control-label col-xs-3" >Codigo de Partido</label>
-                    <div class="col-xs-7">
-                        <%                            
-                            CrudPartido obj = new CrudPartido();
-                            Object n = obj.contar(obj);
-                        %>
-                        <input type="text" class="form-control" name="id" value="<%=n%>" placeholder="Ingrese su codigo de Arbitro" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-xs-3" >Nombre de Partido</label>
-                    <div class="col-xs-7">
-                        <input type="text" class="form-control" name="nombre" value="" placeholder="Ingrese su nombre" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="sel1" class="control-label col-xs-3">Tipo de Partido</label>
-                    <div class="col-xs-6"> 
-                        <select class="form-control" id="sel1" name="tPartido">
-                            <option value="">Seleccione</option>
-                            <option value="Canchita">Futbol Sala</option>
-                            <option value="Canchita">Futbol 11</option>
-                            <option value="Canchita">Partido Amistosos</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group input-group" >
-                    <label for="sel1" class="control-label col-xs-2">Cantida de Goles</label>
-                    <div class="col-xs-3" > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <div class="col-xs-9">
-                            <input type="number" class="form-control" name="cGoles" value="" placeholder="Ingrese su nombre" required>
-                        </div> 
-                    </div>
-                    <label for="sel1" class="control-label col-xs-2">Fecha Partido</label>
-                    <div class="col-xs-6"> 
-                        <div class="col-xs-7">
-                            <input type="date" class="form-control" name="fecha" value="" placeholder="Ingrese su nombre" required>
-                        </div>
-                    </div>
-                </div>
-                    <div class="form-group"  >
-                    <label class="control-label col-xs-3" >Codigo de Equipo</label>
-                    <div class="col-xs-7">
-                        <%                            
-                            CrudPartido obj1 = new CrudPartido();
-                            Object m = obj1.contar(obj1);
-                        %>
-                        <input type="text" class="form-control" name="cEq" value="<%=m%>" placeholder="Ingrese su codigo de Arbitro" required>
-                    </div>
-                </div>
-
-                <div class="form-group input-group" >
-                    <label for="sel1" class="control-label col-xs-2">Equipo Visitante</label>
-                    <div class="col-xs-4" > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <select class="form-control" id="sel1" name="eqVisitante">
-                            <%
-                                List<Equipo>leq= cpar.Visitante();
-                                for(Equipo par:leq)
-                                {
-                            %>
-                            <option value="<%=par.getIdEq()%>"><%=par.getNombre()%></option>
-                            <%
-                            }%>
-                        </select>
-                    </div>
-                    <label for="sel1" class="control-label col-xs-2">Equipo Local</label>
-                    <div class="col-xs-4"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <select class="form-control" id="sel1" name="eqLocal">
-                            <%
-                                List<Equipo>leql= cpar.Local();
-                                for(Equipo par:leql)
-                                {
-                            %>
-                            <option value="<%=par.getIdEq()%>"><%=par.getNombre()%></option>
-                            <%
-                            }%>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group input-group" >
-                    <label for="sel1" class="control-label col-xs-2">Marcador Eq Local</label>
-                    <div class="col-xs-4" > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <select class="form-control" id="sel1" name="mEqLo">
-                            <%
-                                List<Equipo>lml= cpar.mLocal();
-                                for(Equipo par:lml)
-                                {
-                            %>
-                            <option value="<%=par.getIdEq()%>"><%=par.getCantGoles()%></option>
-                            <%
-                            }%>
-                        </select>
-                    </div>
-                    <label for="sel1" class="control-label col-xs-2">Marcador Equipo Visitante</label>
-                    <div class="col-xs-4"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <select class="form-control" id="sel1" name="mEqVisi">
-                            <%
-                                List<Equipo>lmv= cpar.mVisitante();
-                                for(Equipo par:lmv)
-                                {
-                            %>
-                            <option value="<%=par.getIdEq()%>"><%=par.getCantGoles()%></option>
-                            <%
-                            }%>
-                        </select> 
-                    </div>
-                </div>
-                <div class="form-group input-group" >
-                    <label for="sel1" class="control-label col-xs-2">Arbitro</label>
-                    <div class="col-xs-4" > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <select class="form-control" id="sel1" name="arbitro">
-                            <%
-                                List<Arbitro>lar=cpar.viewarbi();
-                                for(Arbitro dp:lar)
-                                {
-                            %>
-                            <option value="<%=dp.getIdArbitro()%>"><%=dp.getNombre()%></option>
-                        </select>   
-                            <%}%>
-                    </div>
-                    <label for="sel1" class="control-label col-xs-2">Codigo de Detalle</label>
-                    <div class="col-xs-4"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <select class="form-control" id="sel1" name="detalle">
-                            <%
-                                List<DetallePartido>lde=cpar.viewDet();
-                                for(DetallePartido dp:lde)
-                                {
-                            %>
-                            <option value="<%=dp.getIdDetalle() %>"><%=dp.getIdDetalle() %></option>
-                            <%}%>
-                        </select>  
-                    </div>
-                </div>
-        </div>
-    </div>
-        <div class="row">
-                        <div class="col-md-100">
-                            <center><button class="btn btn-lg btn-primary" type="submit" name="insertar" value="insertar">Insertar</button>
-                            <button class="btn btn-lg btn-success" type="submit" name="modificar" value="modificar" onclick="return confirm('Esta Seguro que Desea Modificar?');">Modificar</button>
-                            <button class="btn btn-lg btn-danger" type="submit" name="eliminar" value="eliminar" onclick="return confirm('Esta Seguro que Desea Eliminar');">Eliminar</button>
-                            <button class="btn btn-lg btn-info" type="reset" value="Limpiar">Limpiar</button></center>
-                       </div>      
-        </div><br/>
-    <center>
+                                        <div class="col-xs-15">
+                                            <%
+                                                CrudPartido obj1 = new CrudPartido();
+                                                Object m = obj1.contar(obj1);
+                                            %>
+                                            <input type="text" class="form-control" name="cEq" value="<%=m%>" placeholder="Ingrese su codigo de Arbitro" required>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <label for="sel1" class="control-label col-xs-2">Equipo Visitante</label>
+                                </td>
+                                <td>
+                                    <div class="col-xs-15" > 
+                                        <select class="form-control" id="sel1" name="eqVisitante">
+                                            <%
+                                                List<Equipo> leq = cpar.Visitante();
+                                                for (Equipo par : leq) {
+                                            %>
+                                            <option value="<%=par.getIdEq()%>"><%=par.getNombre()%></option>
+                                            <%
+                                                }%>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td>
+                                    <label for="sel1" class="control-label col-xs-2">Equipo Local</label>
+                                </td>
+                                <td>
+                                    <div class="col-xs-15">
+                                        <select class="form-control" id="sel1" name="eqLocal">
+                                            <%
+                                                List<Equipo> leql = cpar.Local();
+                                                for (Equipo par : leql) {
+                                            %>
+                                            <option value="<%=par.getIdEq()%>"><%=par.getNombre()%></option>
+                                            <%
+                                    }%>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="sel1" class="control-label col-xs-2">Marcador Eq Local</label>
+                                </td>
+                                <td>
+                                    <div class="col-xs-15" > 
+                                        <select class="form-control" id="sel1" name="mEqLo">
+                                            <%
+                                                List<Equipo> lml = cpar.mLocal();
+                                                for (Equipo par : lml) {
+                                            %>
+                                            <option value="<%=par.getIdEq()%>"><%=par.getCantGoles()%></option>
+                                            <%
+                                    }%>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td>
+                                    <label for="sel1" class="control-label col-xs-2">Marcador Equipo Visitante</label>
+                                </td>
+                                <td>
+                                    <div class="col-xs-15"> 
+                                        <select class="form-control" id="sel1" name="mEqVisi">
+                                            <%
+                                                List<Equipo> lmv = cpar.mVisitante();
+                                                for (Equipo par : lmv) {
+                                            %>
+                                            <option value="<%=par.getIdEq()%>"><%=par.getCantGoles()%></option>
+                                            <%
+                                    }%>
+                                        </select> 
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="sel1" class="control-label col-xs-2">Arbitro</label>
+                                </td>
+                                <td>
+                                    <div class="col-xs-15" > 
+                                        <select class="form-control" id="sel1" name="arbitro">
+                                            <%
+                                                List<Arbitro> lar = cpar.viewarbi();
+                                                for (Arbitro dp : lar) {
+                                            %>
+                                            <option value="<%=dp.getIdArbitro()%>"><%=dp.getNombre()%></option>
+                                            <%}%>
+                                        </select>   
+                                    </div> 
+                                </td>
+                                <td>
+                                    <label for="sel1" class="control-label col-xs-2">Codigo de Detalle</label>
+                                </td>
+                                <td>
+                                    <div class="col-xs-15">
+                                        <select class="form-control" id="sel1" name="detalle">
+                                            <%
+                                                List<DetallePartido> lde = cpar.viewDet();
+                                                for (DetallePartido dp : lde) {
+                                            %>
+                                            <option value="<%=dp.getIdDetalle()%>"><%=dp.getIdDetalle()%></option>
+                                            <%}%>
+                                        </select>  
+                                    </div> 
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </center>
+            </div>
+    <div class="row">
+        <div class="col-md-100">
+            <center><button class="btn btn-lg btn-primary" type="submit" name="insertar" value="insertar">Insertar</button>
+                <button class="btn btn-lg btn-success" type="submit" name="modificar" value="modificar" onclick="return confirm('Esta Seguro que Desea Modificar?');">Modificar</button>
+                <button class="btn btn-lg btn-danger" type="submit" name="eliminar" value="eliminar" onclick="return confirm('Esta Seguro que Desea Eliminar');">Eliminar</button>
+                <button class="btn btn-lg btn-info" type="reset" value="Limpiar">Limpiar</button></center>
+        </div>      
+    </div><br/>
+<center>
     <table  border="1" class="table table-striped table-bordered table-hover table-condensed">
-                
-                  <tr>
-                      <th class="danger">Codigo de Partido</th>
-                      <th class="danger">Nombre de Partido</th>
-                      <th class="danger">Tipo</th>
-                      <th class="danger">N° Goles</th>
-                      <th class="danger">Fecha</th>
-                      <th class="danger">id Equipo</th>
-                      <th class="danger">Eq.Visitante</th>
-                      <th class="danger">Eq.Local</th>
-                      <th class="danger">Marc.Visitante</th>
-                      <th class="danger">Marc.Local</th>
-                      <th class="danger">Arbitro</th>
-                      <th class="danger">Detalle</th>
-                      <th class="danger">seleccionar</th>
-                  </tr>
-                  <%
-                  List<Partido> lst2=cpar.view();
-                  for(Partido parti:lst2){
-                  %>
-                  <tr>
-                      <td class="success"><%= parti.getIdPartido() %></td>
-                      <td class="success"><%= parti.getNombre() %></td>
-                      <td class="success"><%= parti.getTipoPartido() %></td>
-                      <td class="success"><%= parti.getNumGoles() %></td>
-                      <td class="success"><%= parti.getFecha() %></td>
-                      <td class="success" hidden=""><%= parti.getIdEquipo() %></td>
-                      <td class="success"><%=parti.getEqVisitante() %></td>
-                      <td class="success"><%=parti.getEqLocal() %></td>
-                      <td class="success"><%=parti.getMarcadorVisi() %></td>
-                      <td class="success"><%=parti.getMarcadorLocal() %></td>
-                      <td class="success"><%=parti.getIdArb()%></td>
-                      <td class="success"><%=parti.getIdDetalle() %></td>
-                      <td class="success"><a href="javascript:cargar(<%= parti.getIdPartido() %>,
-                             '<%= parti.getNombre() %>',
-                             '<%= parti.getTipoPartido() %>',
-                             '<%= parti.getNumGoles() %>',
-                             '<%= parti.getNumGoles() %>',
-                             '<%= parti.getFecha() %>',
-                             '<%= parti.getIdEquipo() %>',
-                             '<%=parti.getEqVisitante() %>',
-                             '<%=parti.getEqLocal() %>',
-                             '<%=parti.getMarcadorVisi() %>',
-                             '<%=parti.getMarcadorLocal() %>',
-                             '<%=parti.getIdArb()%>',
-                             '<%=parti.getIdDetalle() %>'
-                             )">Seleccionar</a></td>
-                      </tr>
-                   <%
-                  }
-                  %>
-              </tbody>
+
+        <tr>
+            <th class="danger">Codigo de Partido</th>
+            <th class="danger">Nombre de Partido</th>
+            <th class="danger">Tipo</th>
+            <th class="danger">N° Goles</th>
+            <th class="danger">Fecha</th>
+            <th class="danger" hidden="true">id Equipo</th>
+            <th class="danger">Eq.Visitante</th>
+            <th class="danger">Eq.Local</th>
+            <th class="danger">Marc.Visitante</th>
+            <th class="danger">Marc.Local</th>
+            <th class="danger">Arbitro</th>
+            <th class="danger">Detalle</th>
+            <th class="danger">seleccionar</th>
+        </tr>
+        <%
+            List<Partido> lst2 = cpar.view();
+            for (Partido parti : lst2) {
+        %>
+        <tr>
+            <td class="success"><%= parti.getIdPartido()%></td>
+            <td class="success"><%= parti.getNombre()%></td>
+            <td class="success"><%= parti.getTipoPartido()%></td>
+            <td class="success"><%= parti.getNumGoles()%></td>
+            <td class="success"><%= parti.getFecha()%></td>
+            <td class="success" hidden=""><%= parti.getIdEquipo()%></td>
+            <td class="success"><%=parti.getEqVisitante()%></td>
+            <td class="success"><%=parti.getEqLocal()%></td>
+            <td class="success"><%=parti.getMarcadorVisi()%></td>
+            <td class="success"><%=parti.getMarcadorLocal()%></td>
+            <td class="success"><%=parti.getIdArb()%></td>
+            <td class="success"><%=parti.getIdDetalle()%></td>
+            <td class="success"><a href="javascript:cargar(<%= parti.getIdPartido()%>,
+                                   '<%= parti.getNombre()%>',
+                                   '<%= parti.getTipoPartido()%>',
+                                   '<%= parti.getNumGoles()%>',
+                                   '<%= parti.getNumGoles()%>',
+                                   '<%= parti.getFecha()%>',
+                                   '<%= parti.getIdEquipo()%>',
+                                   '<%=parti.getEqVisitante()%>',
+                                   '<%=parti.getEqLocal()%>',
+                                   '<%=parti.getMarcadorVisi()%>',
+                                   '<%=parti.getMarcadorLocal()%>',
+                                   '<%=parti.getIdArb()%>',
+                                   '<%=parti.getIdDetalle()%>'
+                                   )">Seleccionar</a></td>
+        </tr>
+        <%
+            }
+        %>
+        </tbody>
     </table></center>
-              
-             
-    </body>
+
+
+</body>
 </html>
 

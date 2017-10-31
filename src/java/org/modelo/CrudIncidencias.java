@@ -64,8 +64,7 @@ public class CrudIncidencias extends Conexion
             pre.setString(5, in.getTiempo());
             pre.setInt(6, in.getCantidad());
             pre.setInt(7, in.getIdPartido());
-            pre.setString(8, in.getTipo());
-            pre.setInt(9, in.getIdJugador());
+            pre.setInt(8, in.getIdJugador());
             pre.executeUpdate();
         } catch (Exception e) 
         {
