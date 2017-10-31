@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package org.controlador;
 
 import java.io.IOException;
@@ -17,8 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 import org.modelo.LoginM;
 
 /**
- *
- * @author monterroso
+ *Nombre de la clase:Acceso
+ * Fecha:13/10/2017
+ * Version:1.0
+ * Copyright:UEFA
+ * @author  Ale Gomez, Alexander Lue, Carlos Paniagua
  */
 public class Acceso extends HttpServlet {
 

@@ -1,7 +1,7 @@
 <%-- 
     Document   : Incidencias
     Created on : Oct 18, 2017, 11:43:54 AM
-    Author     : monterroso
+    Author     :  Ale Gomez, Alexander Lue, Carlos Paniagua
 --%>
 
 <%@page import="org.modelo.*"%>
@@ -57,18 +57,27 @@
                     <div class="collapse navbar-collapse" id="navbar-1">
                          <ul class="nav navbar-nav">
                             
-                            <li><a href="Arbitro.jsp">Arbitro</a>
-                            </li>
-                             <li><a href="Entrenador.jsp">Entrenador</a>
-                            </li>
-                             <li><a href="Equipo.jsp">Equipo</a>
-                            </li>
-                            <li><a href="#">Incidencias</a>
-                            </li>
-                            <li><a href="detallePartido.jsp">Detalles de Partido</a>
-                            </li>
-                            <li><a href="jugador.jsp">Jugador</a>
-                            </li>
+                           <a class="navbar-brand" href="../index.jsp"><font color="white">SIVAR LIGA</font></a>
+                        <li><a href="Arbitro.jsp">Arbitro</a>
+                    </li>
+                    <li><a href="Detalle.jsp">Detalle de Partido</a>
+                    </li>
+                    <li><a href="Entrenador.jsp">Entrenador</a>
+                    </li>
+                    <li><a href="Equipo.jsp">Equipo</a>
+                    </li>
+                    <li><a href="#">Incidencias</a>
+                    </li>
+                    <li><a href="Jornada.jsp">Jornada</a>
+                    </li>
+                    <li><a href="Partido.jsp">Partido</a>
+                    </li>
+                    <li><a href="Torneo.jsp">Torneo</a>
+                    </li>
+                    <li><a href="jugador.jsp">Jugador</a>
+                    </li>
+                    <li><a href="usuarios.jsp">Usuarios</a>
+                    </li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right" >
                              <li><a href="../index.jsp?cerrar=true"><span class="glyphicon glyphicon-log-in"></span><font> Cerrar Sesion</font></a></li>

@@ -1,7 +1,7 @@
 <%-- 
     Document   : Index1
     Created on : Oct 28, 2017, 11:05:14 PM
-    Author     : fam Gomez
+    Author     : Ale Gomez, Alexander Lue, Carlos Paniagua
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -14,39 +14,52 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-       
-        <nav class="navbar navbar-inverse navbar-fixed-top">
+        <link rel="stylesheet" href="../bootstrap-3.3.6-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/tables.css" />
 
-            <div class="conteiner-fluid">
-                <div class="navabr-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-1">
-                        <span class="sr-only">Menu</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"> </span>
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse" id="navbar-1">
-                    <ul class="nav navbar-nav">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
 
-                        <li><a href="#">Cliente</a>
-                        </li>
-                        <li><a href="Entrenador.jsp">Producto</a>
-                        </li>
-                        <li><a href="Equipo.jsp">Venta</a>
-                        </li>
-                        <li><a href="Incidencias.jsp">Detalle de Venta</a>
-                        </li>
-                        <li><a href="detallePartido.jsp">Usuarios</a>
-                        </li>
-                    </ul>
-                </div>     
-            </div>    
-        </nav>      
-    </head>
-    <body bgcolor="red">
-        <br><br><br>
-        <div class="col-md-12">
+        <div class="conteiner-fluid">
+            <div class="navabr-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-1">
+                    <span class="sr-only">Menu</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"> </span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-1">
+                <ul class="nav navbar-nav">
+                <a class="navbar-brand" href="index.jsp"><font color="white">SIVAR LIGA</font></a>
+
+                    <li><a href="./Admin/Arbitro.jsp">Arbitro</a>
+                    </li>
+                    <li><a href="./Admin/Detalle.jsp">Detalle de Partido</a>
+                    </li>
+                    <li><a href="./Admin/Entrenador.jsp">Entrenador</a>
+                    </li>
+                    <li><a href="./Admin/Equipo.jsp">Equipo</a>
+                    </li>
+                    <li><a href="./Admin/Incidencias.jsp">Incidencias</a>
+                    </li>
+                    <li><a href="./Admin/Jornada.jsp">Jornada</a>
+                    </li>
+                    <li><a href="./Admin/Partido.jsp">Partido</a>
+                    </li>
+                    <li><a href="./Admin/Torneo.jsp">Torneo</a>
+                    </li>
+                    <li><a href="./Admin/jugador.jsp">Jugador</a>
+                    </li>
+                    <li><a href="./Admin/usuarios.jsp">Usuarios</a>
+                    </li>
+                </ul>
+            </div>     
+        </div>    
+    </nav>      
+</head>
+<body>
+    <br><br><br>
+    <div class="col-md-12">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
@@ -80,10 +93,10 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-        </div>
-    </body>
-    <footer >
-        
-    </footer>
+    </div>
+</body>
+<footer >
+
+</footer>
 </html>
 

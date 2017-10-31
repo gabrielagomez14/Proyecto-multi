@@ -6,7 +6,7 @@ package org.modelo;
  * Fecha:13/10/2017
  * Version:1.0
  * Copyright:UEFA
- * @author monterroso
+ * @author Ale Gomez, Alexander Lue, Carlos Paniagua
  */
 public class Usuarios 
 {

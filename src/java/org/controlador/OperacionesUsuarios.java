@@ -15,8 +15,8 @@ import org.modelo.Usuarios;
  * Nombre de la clase:OperacionesUsuarios
  * Fecha:17/10/2017
  * Version:1.0
- * Copyright:ITCA-FEPADE
- * @author monterroso
+ * Copyrigth:ITCA-FEPADE
+ * @author Ale Gomez,Alexander Lue, Carlos Paniagua
  */
 public class OperacionesUsuarios extends HttpServlet {
 

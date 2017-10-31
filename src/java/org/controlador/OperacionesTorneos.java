@@ -15,8 +15,11 @@ import org.modelo.CrudTorneo;
 import org.modelo.Torneo;
 
 /**
- *
- * @author fam Gomez
+ ** Nombre de la clase:OperacionesTorneos
+ * Fecha:17/10/2017
+ * Version:1.0
+ * Copyrigth:ITCA-FEPADE
+ * @author Ale Gomez,Alexander Lue, Carlos Paniagua
  */
 public class OperacionesTorneos extends HttpServlet {
 

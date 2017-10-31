@@ -15,8 +15,11 @@ import org.modelo.CrudDetalle;
 import org.modelo.DetallePartido;
 
 /**
- *
- * @author monterroso
+ *Nombre de la clase:OperacionesDetalle
+ * Fecha:17/10/2017
+ * Version:1.0
+ * Copyright:ITCA-FEPADE
+ * @author Ale Gomez, Alexander Lue, Carlos Paniagua
  */
 public class OperacionesDetalles extends HttpServlet {
 

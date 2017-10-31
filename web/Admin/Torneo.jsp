@@ -1,7 +1,7 @@
 <%-- 
     Document   : Torneo
     Created on : Oct 20, 2017, 3:58:42 PM
-    Author     : monterroso
+    Author     :  Ale Gomez, Alexander Lue, Carlos Paniagua
 --%>
 
 <%@page import="org.modelo.*"%>
@@ -17,7 +17,7 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="../bootstrap-3.3.6-dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/tables.css" />
-        <title>Mantenimiento de Arbitro</title>
+        <title>Mantenimiento de Torneo</title>
         <script Language='JavaScript'>
             function cargar(id, nom, u, c, g, seg, ter, cuar, fI, fF, des, ie, juga, jorna)
             {
@@ -62,18 +62,28 @@
                 <div class="collapse navbar-collapse" id="navbar-1">
                     <ul class="nav navbar-nav">
                         <div class="navbar-header">
-                            <a class="navbar-brand" href="#"><font color="white">SIVAR LIGA</font></a>
+                            <a class="navbar-brand" href="../index.jsp"><font color="white">SIVAR LIGA</font></a>
                         </div>
-                        <li><a href="#">Cliente</a>
-                        </li>
-                        <li><a href="Entrenador.jsp">Producto</a>
-                        </li>
-                        <li><a href="Equipo.jsp">Venta</a>
-                        </li>
-                        <li><a href="Incidencias.jsp">Detalle de Venta</a>
-                        </li>
-                        <li><a href="detallePartido.jsp">Usuarios</a>
-                        </li>
+                    <li><a href="Arbitro.jsp">Arbitro</a>
+                    </li>
+                    <li><a href="Detalle.jsp">Detalle de Partido</a>
+                    </li>
+                    <li><a href="Entrenador.jsp">Entrenador</a>
+                    </li>
+                    <li><a href="Equipo.jsp">Equipo</a>
+                    </li>
+                    <li><a href="Incidencias.jsp">Incidencias</a>
+                    </li>
+                    <li><a href="Jornada.jsp">Jornada</a>
+                    </li>
+                    <li><a href="Partido.jsp">Partido</a>
+                    </li>
+                    <li><a href="#">Torneo</a>
+                    </li>
+                    <li><a href="jugador.jsp">Jugador</a>
+                    </li>
+                    <li><a href="usuarios.jsp">Usuarios</a>
+                    </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right" >
                         <li><a href="../index.jsp?cerrar=true"><span class="glyphicon glyphicon-log-in"></span><font> Cerrar Sesion</font></a></li>

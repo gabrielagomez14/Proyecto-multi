@@ -1,7 +1,7 @@
 <%-- 
     Document   : detalle
     Created on : Oct 22, 2017, 3:26:17 PM
-    Author     : Ventura
+    Author     :  Ale Gomez, Alexander Lue, Carlos Paniagua
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -54,20 +54,28 @@
                 <div class="collapse navbar-collapse" id="navbar-1">
                     <ul class="nav navbar-nav">
                         <div class="navbar-header">
-                            <a class="navbar-brand" href="#"><font color="white">SIVAR LIGA</font></a>
+                            <a class="navbar-brand" href="../index.jsp"><font color="white">SIVAR LIGA</font></a>
                         </div>
-                        <li><a href="Arbitro.jsp">Arbitros</a>
-                        </li>
-                        <li><a href="Entrenador.jsp">Entrenadores</a>
-                        </li>
-                        <li><a href="#">Equipo</a>
-                        </li>
-                        <li><a href="Incidencias.jsp">Incidencias</a>
-                        </li>
-                        <li><a href="detallePartido.jsp">Detalle de Partidos</a>
-                        </li>
-                        <li><a href="jugador.jsp">Jugadores</a>
-                        </li>
+                    <li><a href="Arbitro.jsp">Arbitro</a>
+                    </li>
+                    <li><a href="#">Detalle de Partido</a>
+                    </li>
+                    <li><a href="Entrenador.jsp">Entrenador</a>
+                    </li>
+                    <li><a href="Equipo.jsp">Equipo</a>
+                    </li>
+                    <li><a href="Incidencias.jsp">Incidencias</a>
+                    </li>
+                    <li><a href="Jornada.jsp">Jornada</a>
+                    </li>
+                    <li><a href="Partido.jsp">Partido</a>
+                    </li>
+                    <li><a href="Torneo.jsp">Torneo</a>
+                    </li>
+                    <li><a href="jugador.jsp">Jugador</a>
+                    </li>
+                    <li><a href="usuarios.jsp">Usuarios</a>
+                    </li>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right" >

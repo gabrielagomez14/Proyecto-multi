@@ -16,7 +16,7 @@ import org.modelo.Partido;
  * Fecha:17/10/2017
  * Version:1.0
  * Copyrigth:ITCA-FEPADE
- * @author monterroso
+ * @author Ale Gomez,Alexander Lue, Carlos Paniagua
  */
 public class OperacionesPartido extends HttpServlet {
 

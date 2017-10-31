@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package org.controlador;
 
 import java.io.IOException;
@@ -15,8 +11,11 @@ import org.modelo.CrudEntrenador;
 import org.modelo.Entrenador;
 
 /**
- *
- * @author monterroso
+ *Nombre de la clase:OperacionesEntrenador
+ * Fecha:17/10/2017
+ * Version:1.0
+ * Copyright:ITCA-FEPADE
+ * @author Ale Gomez, Alexander Lue, Carlos Paniagua
  */
 public class OperacionesEntrenador extends HttpServlet {
 
