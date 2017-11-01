@@ -8,6 +8,20 @@
 <%@page import="java.util.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page  session="true" %>
+<%
+HttpSession sesion = request.getSession();
+    if (sesion.getAttribute("nivel")==null) 
+    {
+        response.sendRedirect("login.jsp");
+    }else
+    {
+        String nivel= sesion.getAttribute("nivel").toString();
+        if (!nivel.equals("1")) 
+        {
+                response.sendRedirect("login.jsp");
+        }
+    }
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,6 +32,8 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="../bootstrap-3.3.6-dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/tables.css" />
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <title>Mantenimiento de Arbitro</title>
         <script Language='JavaScript'>
             function cargar(id, nom, ape, sue, cate, rol, eq, inci)
@@ -74,6 +90,17 @@
                     </li>
                     <li><a href="usuarios.jsp">Usuarios</a>
                     </li>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu3">
+                        <li role="presentation">
+                            <a role="menuitem" tabindex="-1" href="#">Enlace normal</a>
+                        </li>
+                        <li role="presentation" class="disabled">
+                            <a role="menuitem" tabindex="-1" href="#">Enlace deshabilitado</a>
+                        </li>
+                        <li role="presentation">
+                            <a role="menuitem" tabindex="-1" href="#">Otro enlace normal</a>
+                        </li>
+                    </ul>
                     </ul>
                     <ul class="nav navbar-nav navbar-right" >
                         <li><a href="../index.jsp?cerrar=true"><span class="glyphicon glyphicon-log-in"></span><font> Cerrar Sesion</font></a></li>

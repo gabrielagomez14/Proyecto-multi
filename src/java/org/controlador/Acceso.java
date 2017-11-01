@@ -42,15 +42,15 @@ public class Acceso extends HttpServlet {
             int nivel =0;
             RequestDispatcher rd=null;
            try {
-             if (request.getParameter("btnEnviar")!=null) 
+             if (request.getParameter("btnAcceder")!=null) 
             {
-                userName=request.getParameter("user");
+                userName=request.getParameter("userName");
                 clave=request.getParameter("clave");
                 nivel=cu.login(userName, clave);
                 
                 request.setAttribute("nivel", nivel);
                 request.setAttribute("username", userName);
-                rd=request.getRequestDispatcher("index.jsp");
+                rd=request.getRequestDispatcher("login.jsp");
             }
             rd.forward(request, response);
         } catch (Exception e) {

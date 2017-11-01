@@ -7,6 +7,21 @@
 <%@page import="java.util.*"%>
 <%@page import="org.modelo.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page session="true" %>
+<%
+HttpSession sesion = request.getSession();
+    if (sesion.getAttribute("tipo")==null) 
+    {
+        response.sendRedirect("login.jsp");
+    }else
+    {
+        String nivel= sesion.getAttribute("nivel").toString();
+        if (!nivel.equals("1")) 
+        {
+                response.sendRedirect("login.jsp");
+        }
+    }
+%>
 <!DOCTYPE html>
 <html>
     <head>
