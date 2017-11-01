@@ -32,9 +32,9 @@ public class CrudUsuario extends Conexion
                 us.setId(res.getInt("id"));
                 us.setNombre(res.getString("nombre"));
                 us.setApellido(res.getString("apellido"));
-                us.setUsername(res.getString("usernamer"));
+                us.setUsername(res.getString("username"));
                 us.setClave(res.getString("clave"));
-                us.setNivel(res.getInt("tipo"));
+                us.setNivel(res.getInt("nivel"));
                 lus.add(us);
             }
         } catch (Exception e) 

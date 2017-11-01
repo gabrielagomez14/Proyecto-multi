@@ -34,6 +34,8 @@ HttpSession sesion = request.getSession();
         <meta charset="utf-8">
         <link rel="stylesheet" href="../bootstrap-3.3.6-dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/tables.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script Language='JavaScript'>
             function cargar(id, juga, jugado, p, e, a, penal, llegada, gole, cor)
             {
@@ -58,46 +60,35 @@ HttpSession sesion = request.getSession();
             }
         %>
     <header>
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-
-            <div class="conteiner-fluid">
-                <div class="navabr-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-1">
-                        <span class="sr-only">Menu</span>
-                    </button>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                        <font color="white" size="5" face="Arial black">Liga Sivar</font>
+                    </a>
                 </div>
-                <div class="collapse navbar-collapse" id="navbar-1">
-                    <ul class="nav navbar-nav">
-                        <div class="navbar-header">
-                            <a class="navbar-brand" href="../index.jsp"><font color="white">SIVAR LIGA</font></a>
-                        </div>
-                    <li><a href="Arbitro.jsp">Arbitro</a>
+                <ul class="nav navbar-nav">
+                   <li><a href="jugador.jsp">Gestionar Jugador</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Gestionar Partidos
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="Partido.jsp">Partido</a></li>
+                            <li><a href="Equipo.jsp">Equipo</a></li>
+                            <li><a href="#">Detalle de Partido</a></li>
+                            <li><a href="Incidencias.jsp">Incidencias</a></li>
+                            <li><a href="Entrenador.jsp">Entrenador</a></li>
+                        </ul>
                     </li>
-                    <li><a href="#">Detalle de Partido</a>
-                    </li>
-                    <li><a href="Entrenador.jsp">Entrenador</a>
-                    </li>
-                    <li><a href="Equipo.jsp">Equipo</a>
-                    </li>
-                    <li><a href="Incidencias.jsp">Incidencias</a>
-                    </li>
-                    <li><a href="Jornada.jsp">Jornada</a>
-                    </li>
-                    <li><a href="Partido.jsp">Partido</a>
-                    </li>
-                    <li><a href="Torneo.jsp">Torneo</a>
-                    </li>
-                    <li><a href="jugador.jsp">Jugador</a>
-                    </li>
-                    <li><a href="usuarios.jsp">Usuarios</a>
-                    </li>
-                    </ul>
-
-                    <ul class="nav navbar-nav navbar-right" >
-                        <li><a href="../index.jsp?cerrar=true"><span class="glyphicon glyphicon-log-in"></span><font> Cerrar Sesion</font></a></li>
-                    </ul>
-                </div>     
-            </div>    
+                    <li><a href="Arbitro.jsp">Gestionar Arbitro</a></li>
+                    <li><a href="usuarios.jsp">Usuarios</a></li>
+                    <li><a href="Jornada.jsp">Jornada</a></li>
+                    <li><a href="Torneo.jsp">Torneo</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right" >
+                    <li><a href="../login.jsp?cerrar=true"><span class="glyphicon glyphicon-log-in"></span><font> Cerrar Sesion</font></a></li>
+                </ul>
+            </div>
         </nav>    
     </header>
 </head>

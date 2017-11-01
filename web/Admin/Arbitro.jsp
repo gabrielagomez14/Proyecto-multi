@@ -9,16 +9,13 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page  session="true" %>
 <%
-HttpSession sesion = request.getSession();
-    if (sesion.getAttribute("nivel")==null) 
-    {
+    HttpSession sesion = request.getSession();
+    if (sesion.getAttribute("nivel") == null) {
         response.sendRedirect("login.jsp");
-    }else
-    {
-        String nivel= sesion.getAttribute("nivel").toString();
-        if (!nivel.equals("1")) 
-        {
-                response.sendRedirect("login.jsp");
+    } else {
+        String nivel = sesion.getAttribute("nivel").toString();
+        if (!nivel.equals("1")) {
+            response.sendRedirect("login.jsp");
         }
     }
 %>
@@ -32,7 +29,7 @@ HttpSession sesion = request.getSession();
         <meta charset="utf-8">
         <link rel="stylesheet" href="../bootstrap-3.3.6-dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/tables.css" />
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <title>Mantenimiento de Arbitro</title>
         <script Language='JavaScript'>
@@ -56,58 +53,36 @@ HttpSession sesion = request.getSession();
             }
         %>
     <header>
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-
-            <div class="conteiner-fluid">
-                <div class="navabr-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-1">
-                        <span class="sr-only">Menu</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"> </span>
-                    </button>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                        <font color="white" size="5" face="Arial black">Liga Sivar</font>
+                    </a>
                 </div>
-                <div class="collapse navbar-collapse" id="navbar-1">
-                    <ul class="nav navbar-nav">
-                    <a class="navbar-brand" href="../index.jsp"><font color="white">SIVAR LIGA</font></a>
-                    <li><a href="#">Arbitro</a>
+                <ul class="nav navbar-nav">
+                   <li><a href="jugador.jsp">Gestionar Jugador</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Gestionar Partidos
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="Partido.jsp">Partido</a></li>
+                            <li><a href="Equipo.jsp">Equipo</a></li>
+                            <li><a href="Detalle.jsp">Detalle de Partido</a></li>
+                            <li><a href="Incidencias.jsp">Incidencias</a></li>
+                            <li><a href="Entrenador.jsp">Entrenador</a></li>
+                        </ul>
                     </li>
-                    <li><a href="Detalle.jsp">Detalle de Partido</a>
-                    </li>
-                    <li><a href="Entrenador.jsp">Entrenador</a>
-                    </li>
-                    <li><a href="Equipo.jsp">Equipo</a>
-                    </li>
-                    <li><a href="Incidencias.jsp">Incidencias</a>
-                    </li>
-                    <li><a href="Jornada.jsp">Jornada</a>
-                    </li>
-                    <li><a href="Partido.jsp">Partido</a>
-                    </li>
-                    <li><a href="Torneo.jsp">Torneo</a>
-                    </li>
-                    <li><a href="jugador.jsp">Jugador</a>
-                    </li>
-                    <li><a href="usuarios.jsp">Usuarios</a>
-                    </li>
-                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu3">
-                        <li role="presentation">
-                            <a role="menuitem" tabindex="-1" href="#">Enlace normal</a>
-                        </li>
-                        <li role="presentation" class="disabled">
-                            <a role="menuitem" tabindex="-1" href="#">Enlace deshabilitado</a>
-                        </li>
-                        <li role="presentation">
-                            <a role="menuitem" tabindex="-1" href="#">Otro enlace normal</a>
-                        </li>
-                    </ul>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right" >
-                        <li><a href="../index.jsp?cerrar=true"><span class="glyphicon glyphicon-log-in"></span><font> Cerrar Sesion</font></a></li>
-                    </ul>
-                </div>     
-            </div>    
-        </nav>          
+                    <li><a href="Arbitro.jsp">Gestionar Arbitro</a></li>
+                    <li><a href="usuarios.jsp">Usuarios</a></li>
+                    <li><a href="Jornada.jsp">Jornada</a></li>
+                    <li><a href="Torneo.jsp">Torneo</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right" >
+                    <li><a href="../login.jsp?cerrar=true"><span class="glyphicon glyphicon-log-in"></span><font> Cerrar Sesion</font></a></li>
+                </ul>
+            </div>
+        </nav>     
     </header>
     <script src="js/jquery-latest.js"></script> 
     <script src="../bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
@@ -116,8 +91,7 @@ HttpSession sesion = request.getSession();
     CrudArbitro car = new CrudArbitro();
 
 %>
-<body >
-    <br><br><br><br>
+<body>
     <div class="container"><br>
         <form action="operacionesArbitro" name="frmArb" method="post" class="form-horizontal">
             <div class="well well-lg">
@@ -188,9 +162,13 @@ HttpSession sesion = request.getSession();
                         <button class="btn btn-lg btn-success" type="submit" name="modificar" value="modificar" onclick="return confirm('Esta Seguro que Desea Modificar?');">Modificar</button>
                         <button class="btn btn-lg btn-danger" type="submit" name="eliminar" value="eliminar" onclick="return confirm('Esta Seguro que Desea Eliminar');">Eliminar</button>
                         <button class="btn btn-lg btn-info" type="reset" value="Limpiar">Limpiar</button></center>
+
                 </div>      
             </div>
     </div>          
+</form>
+<form name="reporte" action="reporte1">
+    <input type="submit" value="Visualizar PDF" name="btn" />
 </form>
 <hr>
 <center>

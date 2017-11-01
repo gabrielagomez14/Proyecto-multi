@@ -32,6 +32,8 @@ HttpSession sesion = request.getSession();
         <meta charset="utf-8">
         <link rel="stylesheet" href="../bootstrap-3.3.6-dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/tables.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <title>Mantenimiento de Incidencias</title>
         <script Language='JavaScript'>
             function cargar(id,tipo,fecha,minuto,tiempo,cant,idPar,idjuga)
@@ -56,50 +58,36 @@ HttpSession sesion = request.getSession();
                 <%
                 }
                 %>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-                
-                <div class="conteiner-fluid">
-                    <div class="navabr-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-1">
-                        <span class="sr-only">Menu</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"> </span>
-                        </button>
-                      
-                       
-                    </div>
-                    <div class="collapse navbar-collapse" id="navbar-1">
-                         <ul class="nav navbar-nav">
-                            
-                           <a class="navbar-brand" href="../index.jsp"><font color="white">SIVAR LIGA</font></a>
-                        <li><a href="Arbitro.jsp">Arbitro</a>
-                    </li>
-                    <li><a href="Detalle.jsp">Detalle de Partido</a>
-                    </li>
-                    <li><a href="Entrenador.jsp">Entrenador</a>
-                    </li>
-                    <li><a href="Equipo.jsp">Equipo</a>
-                    </li>
-                    <li><a href="#">Incidencias</a>
-                    </li>
-                    <li><a href="Jornada.jsp">Jornada</a>
-                    </li>
-                    <li><a href="Partido.jsp">Partido</a>
-                    </li>
-                    <li><a href="Torneo.jsp">Torneo</a>
-                    </li>
-                    <li><a href="jugador.jsp">Jugador</a>
-                    </li>
-                    <li><a href="usuarios.jsp">Usuarios</a>
-                    </li>
+    <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                        <font color="white" size="5" face="Arial black">Liga Sivar</font>
+                    </a>
+                </div>
+                <ul class="nav navbar-nav">
+                   <li><a href="jugador.jsp">Gestionar Jugador</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Gestionar Partidos
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="Partido.jsp">Partido</a></li>
+                            <li><a href="Equipo.jsp">Equipo</a></li>
+                            <li><a href="Detalle.jsp">Detalle de Partido</a></li>
+                            <li><a href="Incidencias.jsp">Incidencias</a></li>
+                            <li><a href="Entrenador.jsp">Entrenador</a></li>
                         </ul>
-                        <ul class="nav navbar-nav navbar-right" >
-                             <li><a href="../index.jsp?cerrar=true"><span class="glyphicon glyphicon-log-in"></span><font> Cerrar Sesion</font></a></li>
-                        </ul>
-                    </div>     
-                </div>    
-            </nav>             
+                    </li>
+                    <li><a href="Arbitro.jsp">Gestionar Arbitro</a></li>
+                    <li><a href="usuarios.jsp">Usuarios</a></li>
+                    <li><a href="Jornada.jsp">Jornada</a></li>
+                    <li><a href="Torneo.jsp">Torneo</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right" >
+                    <li><a href="../login.jsp?cerrar=true"><span class="glyphicon glyphicon-log-in"></span><font> Cerrar Sesion</font></a></li>
+                </ul>
+            </div>
+        </nav>           
         </header>
         <script src="js/jquery-latest.js"></script> 
     <script src="../bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
