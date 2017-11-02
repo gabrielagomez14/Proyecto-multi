@@ -98,11 +98,11 @@ HttpSession sesion = request.getSession();
     </header>
     <script src="js/jquery-latest.js"></script> 
     <script src="../bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
-</head><br><br><br>
+</head>
 <%
     CrudTorneo ct = new CrudTorneo();
 %>
-<body ><marquee><h4><font face="Arial-black">Datos del Torneo</font></h4></marquee>
+<body >
 <div class="well ">
     <div class="container">
         <form action="operacionesTorneos" name="frmTorneo" method="post">
@@ -272,15 +272,29 @@ HttpSession sesion = request.getSession();
 </div>
 <%-- bottones--%>
 <hr>
-<div class="row">
-    <div class="col-md-100">
-        <center><button class="btn btn-lg btn-primary" type="submit" name="insertar" value="insertar">Insertar</button>
-            <button class="btn btn-lg btn-success" type="submit" name="modificar" value="modificar" onclick="return confirm('Esta Seguro que Desea Modificar?');">Modificar</button>
-            <button class="btn btn-lg btn-danger" type="submit" name="eliminar" value="eliminar" onclick="return confirm('Esta Seguro que Desea Eliminar');">Eliminar</button>
-            <button class="btn btn-lg btn-info" type="reset" value="Limpiar">Limpiar</button></center>
-    </div>      
-</div>
-</form>
+<center><table>
+                    <thead>
+                        <tr>
+                            <th>
+                                <button class="btn btn-lg btn-primary" type="submit" name="insertar" value="insertar">Insertar</button> 
+                            </th>
+                            <th>
+                                <button class="btn btn-lg btn-success" type="submit" name="modificar" value="modificar" onclick="return confirm('Esta Seguro que Desea Modificar?');">Modificar</button>
+                            </th>
+                            <th>
+                                <button class="btn btn-lg btn-danger" type="submit" name="eliminar" value="eliminar" onclick="return confirm('Esta Seguro que Desea Eliminar');">Eliminar</button>
+                            </th>
+                            <th>
+                                <button class="btn btn-lg btn-info" type="reset" value="Limpiar">Limpiar</button></form>
+                            </th>
+                            <td>
+                                <form name="reporte" action="reporte1">&nbsp;
+                                    <button class="btn btn-lg btn-toolbar" type="submit" value="Generar Reporte" name="btn">Generar Reporte</button>
+                                </form> 
+                            </td>
+                        </tr>
+                    </thead>
+                </table></center>
 <%--Tabla inferior --%>
 <hr>
 <center>

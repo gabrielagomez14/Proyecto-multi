@@ -96,13 +96,12 @@ HttpSession sesion = request.getSession();
         CrudEntrenador cen=new CrudEntrenador();
 
     %>
-    <body >
-    <br><br><br><center>
-        <br><div class="container"><br>
+    <body><div class="well well-lg">
+        <div class="container"><br>
             <form action="operacionesEntrenador" name="frmEntrenador" method="post" class="form-horizontal">
-            <div class="well well-lg">
+            
               <div class="form-group">
-                  <label class="control-label col-xs-3" ><font face="arial-black" size="4">ID Entrenador:</font></label>
+                  <label class="control-label col-xs-3" ><font face="arial-black" size="4">Codigo Entrenador:</font></label>
                     <div class="col-xs-7">
                         <% 
                             CrudEquipo obj= new CrudEquipo();
@@ -171,17 +170,31 @@ HttpSession sesion = request.getSession();
                   </select>
                     </div>
                 </div>
-            </div><hr>
-                    <div class="row">
-                        <div class="col-md-100">
-                            <center><button class="btn btn-lg btn-primary" type="submit" name="insertar" value="insertar">Insertar</button>
-                            <button class="btn btn-lg btn-success" type="submit" name="modificar" value="modificar" onclick="return confirm('Esta Seguro que Desea Modificar?');">Modificar</button>
-                            <button class="btn btn-lg btn-danger" type="submit" name="eliminar" value="eliminar" onclick="return confirm('Esta Seguro que Desea Eliminar');">Eliminar</button>
-                            <button class="btn btn-lg btn-info" type="reset" value="Limpiar">Limpiar</button></center>
-                       </div>      
-                    </div>
-            </div>          
-        </form>
+        </div></div><hr>
+                    <center><table>
+                    <thead>
+                        <tr>
+                            <th>
+                                <button class="btn btn-lg btn-primary" type="submit" name="insertar" value="insertar">Insertar</button> 
+                            </th>
+                            <th>
+                                <button class="btn btn-lg btn-success" type="submit" name="modificar" value="modificar" onclick="return confirm('Esta Seguro que Desea Modificar?');">Modificar</button>
+                            </th>
+                            <th>
+                                <button class="btn btn-lg btn-danger" type="submit" name="eliminar" value="eliminar" onclick="return confirm('Esta Seguro que Desea Eliminar');">Eliminar</button>
+                            </th>
+                            <th>
+                                <button class="btn btn-lg btn-info" type="reset" value="Limpiar">Limpiar</button></form>
+                            </th>
+                            <td>
+                                <form name="reporte" action="reporte1">&nbsp;
+                                    <button class="btn btn-lg btn-toolbar" type="submit" value="Generar Reporte" name="btn">Generar Reporte</button>
+                                </form> 
+                            </td>
+                        </tr>
+                    </thead>
+                </table></center>
+            </div>
     <hr>
     <center>
     <table  border="1" class="table table-striped table-bordered table-hover table-condensed">

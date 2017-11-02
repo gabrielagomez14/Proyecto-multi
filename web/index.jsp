@@ -19,41 +19,29 @@
         <link rel="stylesheet" href="../css/tables.css" />
         <link rel="stylesheet"  type=" text/css" href="../css/MeStyle.css" >
     </head>
-    <body >
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="navabr-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-1">
-                    <span class="sr-only">Menu</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"> </span>
-                </button>
+    <body  >
+        <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <font color="white" size="5" face="Arial black">Liga Sivar</font>
+                </a>
             </div>
-            <div class="collapse navbar-collapse" id="navbar-1">
-                <ul class="nav navbar-nav">
-                    <a class="navbar-brand" href="index.jsp"><font color="white">SIVAR LIGA</font></a>
-
-                    <li><a href="./Admin/Arbitro.jsp">Arbitro</a>
-                    </li>
-                    <li><a href="./Admin/Detalle.jsp">Detalle de Partido</a>
-                    </li>
-                    <li><a href="./Admin/Entrenador.jsp">Entrenador</a>
-                    </li>
-                    <li><a href="./Admin/Equipo.jsp">Equipo</a>
-                    </li>
-                    <li><a href="./Admin/Incidencias.jsp">Incidencias</a>
-                    </li>
-
-                    <li><a href="./Admin/usuarios.jsp">Usuarios</a>
-                    </li>
-                    <ul class="nav navbar-nav navbar-right" >
-                        <li><a href="login.jsp"><font>Iniciar Sesion</font></a></li>
-                    </ul>
-                </ul>
-            </div>     
-        </div>    
-    </nav>
-    <br><br><br>
+            <ul class="nav navbar-nav">
+                <li><a href="jugador.jsp"> Jugador</a></li>
+                <li><a href="Arbitro.jsp"> Arbitro</a></li>
+                <li><a href="Partidos.jsp">Partidos</a></li>
+                <li><a href="Jornada.jsp">Jornada</a></li>
+                <li><a href="Torneo.jsp">Torneo</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" >
+                <li><a href="login.jsp"><font color="white"><span class="glyphicon glyphicon-log-in"></span>
+                        Iniciar Sesi&oacute;n</font>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>         
     <header>
         <div class="container">
             <div class="col-md-12">
@@ -126,20 +114,25 @@
         </div>
         <div class="color1 col-xs-12 col-sm-6 col-md-3">
             <center><font face="Arial black" size="5" col > Valores</font></center>
+            <center><img src="Imagenes/wowo.png" width="75" height="75"></center>
+            <br>
             <ul>
                 <li>Innovación.</li>
                 <li>Responsabilidad.</li>
                 <li>Compromiso.</li>
                 <li>Calidad.</li>
+                <li>Honestidad</li>
             </ul>
+            
         </div>
         <div class="color2 col-xs-12 col-sm-6 col-md-3">
             <center><font face="Arial black" size="5" col > Objetivos</font></center>
+            <center><img src="Imagenes/wowo.png" width="75" height="75"></center>
             <font size="3">
             <ul>
                 <li> Presentarle lo ultimo en la informacion de futbol</li>
-                <li> </li>
-                <li> Presentarle lo ultimo en la informacion de futbol</li>
+                <li> Promoveer  </li>
+                <li> Llevarle los resultados exactos de cada partido </li>
             </ul>
             </font>
         </div>
@@ -147,7 +140,7 @@
 </div>
 <footer>
     <div class="container">
-        <h3>Sivar league</h3>
+        <font face="arial black" size="5"> Copyright © Liga Sivar</font>
     </div>
 </footer>
 

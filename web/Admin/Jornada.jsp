@@ -10,7 +10,7 @@
 <%@page session="true" %>
 <%
 HttpSession sesion = request.getSession();
-    if (sesion.getAttribute("tipo")==null) 
+    if (sesion.getAttribute("nivel")==null) 
     {
         response.sendRedirect("login.jsp");
     }else
@@ -101,10 +101,9 @@ HttpSession sesion = request.getSession();
 
     %>
     <body >
-    <br><br><br>
-        <br><div class="container"><br>
+        <div class="well ">
+        <div class="container"><br>
             <form action="operacionesJornada" name="frmJornada" method="post" class="form-horizontal">
-            <div class="well well-lg">
               <div class="form-group">
                   <label class="control-label col-xs-3" ><font face="arial-black" size="4">Codigo de Jornada:</font></label>
                     <div class="col-xs-7">
@@ -118,33 +117,49 @@ HttpSession sesion = request.getSession();
                 <div class="form-group">
                   <label class="control-label col-xs-3" ><font face="arial-black" size="4">Numero de Jornada:</font></label>
                     <div class="col-xs-7">
-                    <input type="text" class="form-control" name="jornada" value="" placeholder="Ingrese Nombre de Entrenador" required>
+                        <input type="text" class="form-control" name="jornada" value="" placeholder="Ingrese Nombre de Entrenador" required><br>
                     </div>
                 </div>
-                <div class="form-group">
-                  <label class="control-label col-xs-3" ><font face="arial-black" size="4">Fecha de Inicio:</font></label>
-                    <div class="col-xs-7">
+                    <table >
+                        <thead>
+                            <tr>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <label class="control-label " ><font face="arial-black" size="4">Fecha de Inicio:</font></label>
+                                </td>
+                                <td>
+                                    <div class="col-xs-15">
                     <input type="date" class="form-control" name="inicio" value="" placeholder="Ingrese Apellido de Entrenador" required>
                     </div>
-                </div>
-                <div class="form-group">
-                  <label class="control-label col-xs-3" ><font face="arial-black" size="4">Fecha de Finalizacion:</font></label>
-                    <div class="col-xs-7">
+                                </td>
+                                <td>
+                                    <label class="control-label " ><font face="arial-black" size="4">Fecha de Finalizacion:</font></label>
+                                </td>
+                                <td>
+                                    <div class="col-xs-15">
                     <input type="date" class="form-control" name="finalizacion" value="" placeholder="Ingrese Apellido de Entrenador" required>
                     </div>
-                </div>
-                 <div class="form-group">
-                  <label class="control-label col-xs-3" ><font face="arial-black" size="4">Numero de Partidos Diferidos:</font></label>
-                    <div class="col-xs-7">
-                    <input type="text" class="form-control" name="pdiferido" value="" placeholder="Ingrese Nombre de Entrenador" required>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tr><td></td></tr>
+                        <tbody>
+                            <tr>
+                                <td><label class="control-label " ><font face="arial-black" size="4">Numero de Partidos Diferidos:</font></label></td>
+                                <td>
+                                    <div class="col-xs-9">
+                    <input type="number" class="form-control" name="pdiferido" value="" placeholder="Diferidos" required>
                     </div>
-                </div>
-               <div class="form-group">
-                  <label class="control-label col-xs-3" ><font face="arial-black" size="4">Fecha de Partidos Diferidos:</font></label>
-                    <div class="col-xs-7">
+                                </td>
+                                <td>
+                                    <label class="control-label " ><font face="arial-black" size="4">Fecha de Partidos Diferidos:</font></label>
+                                </td>
+                                <td>
+                                    <div class="col-xs-15">
                     <input type="date" class="form-control" name="fpdiferido" value="" placeholder="Ingrese Apellido de Entrenador" required>
                     </div>
-                </div>
+                                </td>
+                            </tr>
+                    </table>
                <div class="form-group">
                 <label for="sel1" class="control-label col-xs-3">Nombre de Partido</label>
                   <div class="col-xs-6"> 
@@ -157,16 +172,30 @@ HttpSession sesion = request.getSession();
                     </div>
                 </div>
             </div><hr>
-                    <div class="row">
-                        <div class="col-md-100">
-                            <center><button class="btn btn-lg btn-primary" type="submit" name="insertar" value="insertar">Insertar</button>
-                            <button class="btn btn-lg btn-success" type="submit" name="modificar" value="modificar" onclick="return confirm('Esta Seguro que Desea Modificar?');">Modificar</button>
-                            <button class="btn btn-lg btn-danger" type="submit" name="eliminar" value="eliminar" onclick="return confirm('Esta Seguro que Desea Eliminar');">Eliminar</button>
-                            <button class="btn btn-lg btn-info" type="reset" value="Limpiar">Limpiar</button></center>
-                       </div>      
-                    </div>
+                    <center><table>
+                    <thead>
+                        <tr>
+                            <th>
+                                <button class="btn btn-lg btn-primary" type="submit" name="insertar" value="insertar">Insertar</button> 
+                            </th>
+                            <th>
+                                <button class="btn btn-lg btn-success" type="submit" name="modificar" value="modificar" onclick="return confirm('Esta Seguro que Desea Modificar?');">Modificar</button>
+                            </th>
+                            <th>
+                                <button class="btn btn-lg btn-danger" type="submit" name="eliminar" value="eliminar" onclick="return confirm('Esta Seguro que Desea Eliminar');">Eliminar</button>
+                            </th>
+                            <th>
+                                <button class="btn btn-lg btn-info" type="reset" value="Limpiar">Limpiar</button></form>
+                            </th>
+                            <td>
+                                <form name="reporte" action="reporte1">
+                                    <button class="btn btn-lg btn-info" type="submit" value="Generar Reporte" name="btn">Generar Reporte</button>
+                                </form> 
+                            </td>
+                        </tr>
+                    </thead>
+                </table></center>
             </div>          
-        </form>
     <hr>
     <center>
     <table  border="1" class="table table-striped table-bordered table-hover table-condensed">

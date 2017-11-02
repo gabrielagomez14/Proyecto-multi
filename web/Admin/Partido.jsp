@@ -94,7 +94,7 @@ HttpSession sesion = request.getSession();
     </header>
     <script src="js/jquery-latest.js"></script> 
     <script src="../bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
-</head><br><br><br><br>
+</head>
 <%
     CrudPartido cpar = new CrudPartido();
 
@@ -278,15 +278,29 @@ HttpSession sesion = request.getSession();
                     </table>
                     </center>
             </div>
-    <div class="row">
-        <div class="col-md-100">
-            <center><button class="btn btn-lg btn-primary" type="submit" name="insertar" value="insertar">Insertar</button>
-                <button class="btn btn-lg btn-success" type="submit" name="modificar" value="modificar" onclick="return confirm('Esta Seguro que Desea Modificar?');">Modificar</button>
-                <button class="btn btn-lg btn-danger" type="submit" name="eliminar" value="eliminar" onclick="return confirm('Esta Seguro que Desea Eliminar');">Eliminar</button>
-                <button class="btn btn-lg btn-info" type="reset" value="Limpiar">Limpiar</button></center>
-        </div>      
-    </div><br/>
-<center>
+    <center><table>
+                    <thead>
+                        <tr>
+                            <th>
+                                <button class="btn btn-lg btn-primary" type="submit" name="insertar" value="insertar">Insertar</button> 
+                            </th>
+                            <th>
+                                <button class="btn btn-lg btn-success" type="submit" name="modificar" value="modificar" onclick="return confirm('Esta Seguro que Desea Modificar?');">Modificar</button>
+                            </th>
+                            <th>
+                                <button class="btn btn-lg btn-danger" type="submit" name="eliminar" value="eliminar" onclick="return confirm('Esta Seguro que Desea Eliminar');">Eliminar</button>
+                            </th>
+                            <th>
+                                <button class="btn btn-lg btn-info" type="reset" value="Limpiar">Limpiar</button></form>
+                            </th>
+                            <td>
+                                <form name="reporte" action="reporte1">
+                                    <button class="btn btn-lg btn-info" type="submit" value="Generar Reporte" name="btn">Generar Reporte</button>
+                                </form> 
+                            </td>
+                        </tr>
+                    </thead>
+                </table></center>
     <table  border="1" class="table table-striped table-bordered table-hover table-condensed">
 
         <tr>
