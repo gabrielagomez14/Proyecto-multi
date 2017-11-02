@@ -128,7 +128,10 @@
                     <div class="col-xs-6"> 
                         <select class="form-control" id="sel1" name="categoria">
                             <option value="">Seleccione</option>
-                            <option value="Canchita">Canchita</option>
+                            <option value="Primera Division">Primera Division</option>
+                            <option value="Primera B Nacional">Primera B Nacional</option>
+                            <option value="Primera C Nacional">Primera C Nacional</option>
+                            <option value="Primera D Nacional">Primera D Nacional</option>
                         </select>
                     </div>
                 </div>
@@ -137,9 +140,9 @@
                     <div class="col-xs-6"> 
                         <select class="form-control" id="sel1" name="rol">
                             <option value="">Seleccione</option>
-                            <option value="Hola">Hola</option>
-                            <option value="Como">Como</option>
-                            <option value="Estas">Estas</option>
+                            <option value="Principal">Principal</option>
+                            <option value="Asistente">Asistente</option>
+                            <option value="Cuarto Arbitro">Cuarto Arbitro</option>
                         </select>
                     </div>
                 </div>

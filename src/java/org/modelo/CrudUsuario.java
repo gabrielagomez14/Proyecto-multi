@@ -51,7 +51,7 @@ public class CrudUsuario extends Conexion
         {
             this.conectar();
             sql="INSERT INTO public.usuarios(\n" 
-            +"id, nombre, apellido, usernamer, clave, tipo)\n" 
+            +"id, nombre, apellido, username, clave, nivel)\n" 
             +"VALUES (?, ?, ?, ?, ?, ?);";
             pre=this.getCon().prepareStatement(sql);
             pre.setInt(1, us.getId());
@@ -73,7 +73,7 @@ public class CrudUsuario extends Conexion
         {
             this.conectar();
             sql="UPDATE public.usuarios\n" 
-            +"SET nombre=?, apellido=?, usernamer=?, clave=?, tipo=?\n"
+            +"SET nombre=?, apellido=?, username=?, clave=?, nivel=?\n"
             +"	WHERE id=?";
             pre=this.getCon().prepareStatement(sql);
             pre.setString(1, us.getNombre());

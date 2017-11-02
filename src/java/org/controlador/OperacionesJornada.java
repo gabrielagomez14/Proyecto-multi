@@ -39,7 +39,7 @@ public class OperacionesJornada extends HttpServlet {
         try 
         {
             jor.setIdJornada(Integer.parseInt(request.getParameter("id")));
-            jor.setNumJornada(Integer.parseInt(request.getParameter("jornada")));
+            jor.setNombre(request.getParameter("jornada"));
             jor.setFechaInicio(request.getParameter("inicio"));
             jor.setFechaFin(request.getParameter("finalizacion"));
             jor.setNumPartidoDif(Integer.parseInt(request.getParameter("pdiferido")));

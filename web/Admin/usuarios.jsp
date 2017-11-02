@@ -60,7 +60,26 @@
                 <li><a href="../login.jsp?cerrar=true"><span class="glyphicon glyphicon-log-in"></span><font> Cerrar Sesion</font></a></li>
             </ul>
         </div>
-    </nav>         
+    </nav>
+    <script Language='JavaScript'>
+            function cargar(id, n, a, u, c, r)
+            {
+                document.frmUser.id.value = id;
+                document.frmUser.nombre.value = n;
+                document.frmUser.apellido.value = a;
+                document.frmUser.usuario.value = u;
+                document.frmUser.clave.value = c;
+                document.frmUser.rol.value = r;
+            }
+        </script>
+        <%
+            if (request.getAttribute("valor") != null) {%>
+        <script>
+            alert('<%= request.getAttribute("valor")%>');
+        </script>
+        <%
+            }
+        %>
 </header>
 <script src="js/jquery-latest.js"></script> 
 <script src="../bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>

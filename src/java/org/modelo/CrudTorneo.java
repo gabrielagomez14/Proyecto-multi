@@ -63,6 +63,7 @@ public class CrudTorneo extends Conexion
             sql="INSERT INTO public.torneo(\n" 
             +"idtorneo, nomtorneo, ubicacion, canteq, campeon, goleador, seglugar, terlugar, cuarlugar, fechaini, fechafin, descenso, idequipo, idjugador, idjornada)\n" 
             +"VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+            pre=this.getCon().prepareStatement(sql);
             pre.setInt(1, tor.getIdTorneo());
             pre.setString(2, tor.getNombre());
             pre.setString(3, tor.getUbicacion());
@@ -233,7 +234,7 @@ public class CrudTorneo extends Conexion
             {                
                 Jornada jor=new Jornada();
                 jor.setIdJornada(res.getInt("idjornada"));
-                jor.setNumJornada(res.getInt("numjornada"));
+                jor.setNombre(res.getString("nombre"));
                 jor.setFechaInicio(res.getString("fechainicio"));
                 jor.setFechaFin(res.getString("fechafin"));
                 jor.setNumPartidoDif(res.getInt("numpardiferidos"));

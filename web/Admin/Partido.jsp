@@ -146,7 +146,8 @@ HttpSession sesion = request.getSession();
                                 </td>
                                 <td>
                                     <div class="col-xs-15">
-                                        <input type="number" class="form-control" name="cGoles" value="" placeholder="Ingrese su nombre" required>
+                                        <input type="number" class="form-control" name="cGoles" value="" 
+                                               placeholder="Ingrese su nombre" required min="0">
                                     </div>
                                 </td>
                             </tr>
@@ -155,7 +156,8 @@ HttpSession sesion = request.getSession();
                                     <label for="sel1" class="control-label col-xs-2">Fecha Partido</label>
                                     <div class="col-xs-6"> 
                                         <div class="col-lg">
-                                            <input type="date" class="form-control" name="fecha" value="" placeholder="Ingrese su nombre" required>
+                                            <input type="date" class="form-control" name="fecha" value="" 
+                                                   placeholder="Ingrese su nombre" required min="0">
                                         </div>
                                     </div>
                                 </td>
@@ -219,7 +221,7 @@ HttpSession sesion = request.getSession();
                                                 List<Equipo> lml = cpar.mLocal();
                                                 for (Equipo par : lml) {
                                             %>
-                                            <option value="<%=par.getIdEq()%>"><%=par.getCantGoles()%></option>
+                                            <option value="<%=par.getCantGoles()%>"><%=par.getCantGoles()%></option>
                                             <%
                                     }%>
                                         </select>
@@ -235,7 +237,7 @@ HttpSession sesion = request.getSession();
                                                 List<Equipo> lmv = cpar.mVisitante();
                                                 for (Equipo par : lmv) {
                                             %>
-                                            <option value="<%=par.getIdEq()%>"><%=par.getCantGoles()%></option>
+                                            <option value="<%=par.getCantGoles()%>"><%=par.getCantGoles()%></option>
                                             <%
                                     }%>
                                         </select> 
@@ -294,8 +296,8 @@ HttpSession sesion = request.getSession();
                                 <button class="btn btn-lg btn-info" type="reset" value="Limpiar">Limpiar</button></form>
                             </th>
                             <td>
-                                <form name="reporte" action="reporte1">
-                                    <button class="btn btn-lg btn-info" type="submit" value="Generar Reporte" name="btn">Generar Reporte</button>
+                                <form name="reporte" action="reporte1">&nbsp;
+                                    <button class="btn btn-lg btn-toolbar" type="submit" value="Generar Reporte" name="btn">Generar Reporte</button>
                                 </form> 
                             </td>
                         </tr>

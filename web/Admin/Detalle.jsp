@@ -162,28 +162,33 @@ HttpSession sesion = request.getSession();
                 <div class="form-group input-group" >
                     <label for="sel1" class="control-label col-xs-2">Numero de expulsados</label>
                     <div class="col-xs-4"> 
-                        <input type="number" class="form-control" name="expulsados" value="" placeholder="Ingrese Numero  Expulsados" required>
+                        <input type="number" class="form-control" name="expulsados" value="" 
+                               placeholder="Ingrese Numero  Expulsados" required min="0">
                     </div>
                     <label for="sel1" class="control-label col-xs-2">Numero de Amonestado</label>
                     <div class="col-xs-4"> 
-                        <input type="number" class="form-control" name="amonestados" value="" placeholder="Ingrese Numero  Amonestados" required>
+                        <input type="number" class="form-control" name="amonestados" value=""
+                               placeholder="Ingrese Numero  Amonestados" required min="0">
                     </div>
                 </div>
                 <div class="form-group input-group" >
                     <label for="sel1" class="control-label col-xs-2">Numero de Penaltis</label>
                     <div class="col-xs-4"> 
-                        <input type="number" class="form-control" name="penaltis" value="" placeholder="Ingrese Numero Penaltis" required>
+                        <input type="number" class="form-control" name="penaltis" value="" 
+                               placeholder="Ingrese Numero Penaltis" required min="0">
                         &nbsp;&nbsp;&nbsp;</div>
                     <label for="sel1" class="control-label col-xs-2">Numero de LLega a Meta</label>
                     <div class="col-xs-4"> 
-                        <input type="number" class="form-control" name="llegada" value="" placeholder="Ingrese de LLegadas a Meta" required>
+                        <input type="number" class="form-control" name="llegada" value="" 
+                               placeholder="Ingrese de LLegadas a Meta" required min="0">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="control-label col-xs-3" >Cant. de Corner</label>
                     <div class="col-xs-6">
-                        <input type="number" class="form-control" name="corner" value="" placeholder="Ingrese codigo  Detalle" required>
+                        <input type="number" class="form-control" name="corner" value=""
+                               placeholder="Corner" required min="0"> 
                     </div>
                 </div>
         </div>
@@ -205,8 +210,8 @@ HttpSession sesion = request.getSession();
                                 <button class="btn btn-lg btn-info" type="reset" value="Limpiar">Limpiar</button></form>
                             </th>
                             <td>
-                                <form name="reporte" action="reporte1">
-                                    <button class="btn btn-lg btn-info" type="submit" value="Generar Reporte" name="btn">Generar Reporte</button>
+                                <form name="reporte" action="reporte1">&nbsp;
+                                    <button class="btn btn-lg btn-toolbar" type="submit" value="Generar Reporte" name="btn">Generar Reporte</button>
                                 </form> 
                             </td>
                         </tr>
@@ -233,7 +238,7 @@ HttpSession sesion = request.getSession();
             for (DetallePartido dp : ldp) {
         %>
         <tr>
-            <th><%=dp.getIdDetalle()%></th>
+            <th class=""><%=dp.getIdDetalle()%></th>
             <th ><%=dp.getIdJugador()%></th>
             <th><%=dp.getMejorJuga()%></th>
             <th><%=dp.getPosesionBalon()%></th>

@@ -115,9 +115,16 @@ HttpSession sesion = request.getSession();
                     </div>
                 </div>
                 <div class="form-group">
-                  <label class="control-label col-xs-3" ><font face="arial-black" size="4">Numero de Jornada:</font></label>
+                  <label class="control-label col-xs-3" ><font face="arial-black" size="4">Nombre de Jornada:</font></label>
                     <div class="col-xs-7">
-                        <input type="text" class="form-control" name="jornada" value="" placeholder="Ingrese Nombre de Entrenador" required><br>
+                        <select class="form-control" id="sel1" name="jornada">
+                            <option value="Seleccione" >Seleccione</option>
+                            <option value="Jornada A" >Jornada A</option>
+                            <option value="Jornada B" >Jornada B </option>
+                            <option value="Jornada C" >Jornada c </option>
+                            <option value="Jornada D" >Jornada D </option>
+                            <option value="Jornada E " >Jornada E </option>
+                  </select>
                     </div>
                 </div>
                     <table >
@@ -147,7 +154,8 @@ HttpSession sesion = request.getSession();
                                 <td><label class="control-label " ><font face="arial-black" size="4">Numero de Partidos Diferidos:</font></label></td>
                                 <td>
                                     <div class="col-xs-9">
-                    <input type="number" class="form-control" name="pdiferido" value="" placeholder="Diferidos" required>
+                    <input type="number" class="form-control" name="pdiferido" value=""
+                           placeholder="Diferidos" required min="0">
                     </div>
                                 </td>
                                 <td>
@@ -188,8 +196,8 @@ HttpSession sesion = request.getSession();
                                 <button class="btn btn-lg btn-info" type="reset" value="Limpiar">Limpiar</button></form>
                             </th>
                             <td>
-                                <form name="reporte" action="reporte1">
-                                    <button class="btn btn-lg btn-info" type="submit" value="Generar Reporte" name="btn">Generar Reporte</button>
+                                <form name="reporte" action="reporte1">&nbsp;
+                                    <button class="btn btn-lg btn-toolbar" type="submit" value="Generar Reporte" name="btn">Generar Reporte</button>
                                 </form> 
                             </td>
                         </tr>
@@ -217,14 +225,14 @@ HttpSession sesion = request.getSession();
                   %>
                   <tr>
                       <td class="success"><%= jor.getIdJornada() %></td>
-                      <td class="success"><%= jor.getNumJornada() %></td>
+                      <td class="success"><%= jor.getNombre()%></td>
                       <td class="success"><%= jor.getFechaInicio()%></td>
                       <td class="success"><%= jor.getFechaFin()%></td>
                       <td class="success"><%= jor.getNumPartidoDif()%></td>
                       <td class="success"><%= jor.getFechaParDif()%></td>
                       <td class="success"><%=jor.getIdPartido()%></td>
                       <td><a href="javascript:cargar(<%=jor.getIdJornada()%>,
-                             '<%=jor.getNumJornada()%>',
+                             '<%=jor.getNombre()%>',
                              '<%=jor.getFechaInicio()%>',
                              '<%=jor.getFechaFin()%>',
                              '<%=jor.getNumPartidoDif()%>',

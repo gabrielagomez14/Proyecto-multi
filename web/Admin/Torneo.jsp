@@ -135,7 +135,7 @@ HttpSession sesion = request.getSession();
                         </td>
                         <td><label class="control-label col-xs-3" >Cantidad de Goles</label></td>
                         <td>
-                            <input type="number" class="form-control" name="goles"  placeholder="Cant.Goles" required>
+                            <input type="number" class="form-control" name="goles"  placeholder="Cant.Goles" min="0" required>
                         </td>
                     </tr>
                     <tr>
@@ -259,7 +259,7 @@ HttpSession sesion = request.getSession();
                                     List<Jornada> leq7 = ct.viewJornada();
                                     for (Jornada jor : leq7) {
                                 %>
-                                <option value="<%=jor.getIdJornada()%>"><%=jor.getFechaInicio()%></option>
+                                <option value="<%=jor.getIdJornada()%>"><%=jor.getNombre()%></option>
                                 <% }%>
                             </select>
                         </td>

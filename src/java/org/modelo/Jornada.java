@@ -11,7 +11,7 @@ package org.modelo;
 public class Jornada 
 {
     private int idJornada;
-    private int numJornada;
+    private String nombre;
     private String fechaInicio;
     private String fechaFin;
     private int numPartidoDif;
@@ -21,9 +21,9 @@ public class Jornada
     public Jornada() {
     }
 
-    public Jornada(int idJornada, int numJornada, String fechaInicio, String fechaFin, int numPartidoDif, String fechaParDif, int idPartido) {
+    public Jornada(int idJornada, String nombre, String fechaInicio, String fechaFin, int numPartidoDif, String fechaParDif, int idPartido) {
         this.idJornada = idJornada;
-        this.numJornada = numJornada;
+        this.nombre = nombre;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
         this.numPartidoDif = numPartidoDif;
@@ -39,12 +39,12 @@ public class Jornada
         this.idJornada = idJornada;
     }
 
-    public int getNumJornada() {
-        return numJornada;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNumJornada(int numJornada) {
-        this.numJornada = numJornada;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getFechaInicio() {
@@ -87,6 +87,7 @@ public class Jornada
         this.idPartido = idPartido;
     }
 
+    
     
     
 }

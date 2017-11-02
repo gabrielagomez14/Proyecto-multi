@@ -84,8 +84,8 @@ public class CrudEquipo extends Conexion
         try 
         {
             this.conectar();
-            sql="UPDATE public.equipo\n"
-            +"SET nombre=?, numjugadores=?, numamonestados=?, correo=?, direccion=?, tipoequipo=?, telefono=?, cantgoles=?, identrenador=?, idjugador=?, puntaje=?\n"
+            sql="UPDATE public.equipo\n" 
+            +"SET nombre=?, numjugadores=?, numamonestados=?, correo=?, direccion=?, tipoequipo=?, telefono=?, cantgoles=?, identrenador=?, idjugador=?, puntaje=?\n" 
             +"WHERE idequipo=?";
             pre=this.getCon().prepareStatement(sql);
             pre.setString(1, eq.getNombre());

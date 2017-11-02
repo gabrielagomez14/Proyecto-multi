@@ -31,7 +31,7 @@ public class CrudJornada extends Conexion
             {                
                 Jornada jor=new Jornada();
                 jor.setIdJornada(res.getInt("idjornada"));
-                jor.setNumJornada(res.getInt("numjornada"));
+                jor.setNombre(res.getString("nombre"));
                 jor.setFechaInicio(res.getString("fechainicio"));
                 jor.setFechaFin(res.getString("fechafin"));
                 jor.setNumPartidoDif(res.getInt("numpardiferidos"));
@@ -52,11 +52,11 @@ public class CrudJornada extends Conexion
         {
             this.conectar();
             sql="INSERT INTO public.jornada(\n" 
-            +"idjornada, numjornada, fechainicio, fechafin, numpardiferidos, fechapardiferido, idpartido)\n" 
+            +"idjornada, nombre, fechainicio, fechafin, numpardiferidos, fechapardiferido, idpartido)\n" 
             +"VALUES (?, ?, ?, ?, ?, ?, ?);";
             pre=this.getCon().prepareStatement(sql);
             pre.setInt(1, jor.getIdJornada());
-            pre.setInt(2, jor.getNumJornada());
+            pre.setString(2, jor.getNombre());
             pre.setString(3, jor.getFechaInicio());
             pre.setString(4, jor.getFechaFin());
             pre.setInt(5, jor.getNumPartidoDif());
@@ -75,10 +75,10 @@ public class CrudJornada extends Conexion
         {
            this.conectar();
            sql="UPDATE public.jornada\n"
-            +"SET numjornada=?, fechainicio=?, fechafin=?, numpardiferidos=?, fechapardiferido=?, idpartido=?\n"
+            +"SET nombre=?, fechainicio=?, fechafin=?, numpardiferidos=?, fechapardiferido=?, idpartido=?\n"
             +"WHERE idjornada=?";
             pre=this.getCon().prepareStatement(sql);
-            pre.setInt(1, jor.getNumJornada());
+            pre.setString(1, jor.getNombre());
             pre.setString(2, jor.getFechaInicio());
             pre.setString(3, jor.getFechaFin());
             pre.setInt(4, jor.getNumPartidoDif());
