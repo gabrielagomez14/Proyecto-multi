@@ -6,9 +6,9 @@ create table usuarios(
 id serial not null,
 nombre varchar(80) not null,
 apellido varchar(80) not null,
-usernamer varchar(80) not null,
+username varchar(80) not null,
 clave varchar(80) not null,
-tipo int not null
+nivel int not null
 );
 
 create table jugador(
@@ -47,7 +47,7 @@ idJugador int not null
 
 create table jornada(
 idJornada serial primary key,
-numJornada int not null,
+nombre varchar(80) not null,
 fechaInicio varchar(80) not null,
 fechaFin varchar(80) not null,
 numParDiferidos int not null,
@@ -192,12 +192,6 @@ insert into jornada values(3,1,'20/10/2017','25/10/2017',14,'29/10/2017',1);
 insert into jornada values(4,1,'20/10/2017','25/10/2017',14,'29/10/2017',1);
 
 
-insert into usuarios values(1,'Veronica','Monterroso','VeroMonte','VeroMonte',1);
+insert into usuarios values(1,'Gabriela','Gomez','AleGomez','Yoshi.14',1);
 select * from usuarios;
-
-
-
-
-
-
 
