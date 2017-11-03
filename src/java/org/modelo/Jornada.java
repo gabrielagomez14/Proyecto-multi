@@ -11,24 +11,32 @@ package org.modelo;
 public class Jornada 
 {
     private int idJornada;
+    private int idEquipo;
     private String nombre;
-    private String fechaInicio;
-    private String fechaFin;
-    private int numPartidoDif;
-    private String fechaParDif;
-    private int idPartido;
+    private int cantPar;
+    private int victorias;
+    private int empate;
+    private int derrota;
+    private int aFavor;
+    private int encontra;
+    private int diferencia;
+    private int puntos;
 
     public Jornada() {
     }
 
-    public Jornada(int idJornada, String nombre, String fechaInicio, String fechaFin, int numPartidoDif, String fechaParDif, int idPartido) {
+    public Jornada(int idJornada, int idEquipo, String nombre, int cantPar, int victorias, int empate, int derrota, int aFavor, int encontra, int diferencia, int puntos) {
         this.idJornada = idJornada;
+        this.idEquipo = idEquipo;
         this.nombre = nombre;
-        this.fechaInicio = fechaInicio;
-        this.fechaFin = fechaFin;
-        this.numPartidoDif = numPartidoDif;
-        this.fechaParDif = fechaParDif;
-        this.idPartido = idPartido;
+        this.cantPar = cantPar;
+        this.victorias = victorias;
+        this.empate = empate;
+        this.derrota = derrota;
+        this.aFavor = aFavor;
+        this.encontra = encontra;
+        this.diferencia = diferencia;
+        this.puntos = puntos;
     }
 
     public int getIdJornada() {
@@ -39,6 +47,14 @@ public class Jornada
         this.idJornada = idJornada;
     }
 
+    public int getIdEquipo() {
+        return idEquipo;
+    }
+
+    public void setIdEquipo(int idEquipo) {
+        this.idEquipo = idEquipo;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -47,47 +63,68 @@ public class Jornada
         this.nombre = nombre;
     }
 
-    public String getFechaInicio() {
-        return fechaInicio;
+    public int getCantPar() {
+        return cantPar;
     }
 
-    public void setFechaInicio(String fechaInicio) {
-        this.fechaInicio = fechaInicio;
+    public void setCantPar(int cantPar) {
+        this.cantPar = cantPar;
     }
 
-    public String getFechaFin() {
-        return fechaFin;
+    public int getVictorias() {
+        return victorias;
     }
 
-    public void setFechaFin(String fechaFin) {
-        this.fechaFin = fechaFin;
+    public void setVictorias(int victorias) {
+        this.victorias = victorias;
     }
 
-    public int getNumPartidoDif() {
-        return numPartidoDif;
+    public int getEmpate() {
+        return empate;
     }
 
-    public void setNumPartidoDif(int numPartidoDif) {
-        this.numPartidoDif = numPartidoDif;
+    public void setEmpate(int empate) {
+        this.empate = empate;
     }
 
-    public String getFechaParDif() {
-        return fechaParDif;
+    public int getDerrota() {
+        return derrota;
     }
 
-    public void setFechaParDif(String fechaParDif) {
-        this.fechaParDif = fechaParDif;
+    public void setDerrota(int derrota) {
+        this.derrota = derrota;
     }
 
-    public int getIdPartido() {
-        return idPartido;
+    public int getaFavor() {
+        return aFavor;
     }
 
-    public void setIdPartido(int idPartido) {
-        this.idPartido = idPartido;
+    public void setaFavor(int aFavor) {
+        this.aFavor = aFavor;
     }
 
-    
-    
+    public int getEncontra() {
+        return encontra;
+    }
+
+    public void setEncontra(int encontra) {
+        this.encontra = encontra;
+    }
+
+    public int getDiferencia() {
+        return diferencia;
+    }
+
+    public void setDiferencia(int diferencia) {
+        this.diferencia = diferencia;
+    }
+
+    public int getPuntos() {
+        return puntos;
+    }
+
+    public void setPuntos(int puntos) {
+        this.puntos = puntos;
+    }
     
 }

@@ -23,6 +23,11 @@ public class CrudJornada extends Conexion
         List<Jornada>ljr=new ArrayList<>();
         try 
         {
+            /*
+            select idPersona, dui, nombre, apellido, edad, genero,"
+                    + " telefono, direccion, pais.idPais, pais.codigoDePais, pais.nombrePais from persona "+
+                    "inner join pais on persona.idPais = pais.idPais
+            */
             this.conectar();
             sql="select * from jornada";
             pre=this.getCon().prepareCall(sql);
@@ -31,12 +36,16 @@ public class CrudJornada extends Conexion
             {                
                 Jornada jor=new Jornada();
                 jor.setIdJornada(res.getInt("idjornada"));
+                jor.setIdEquipo(res.getInt("idequipo"));
                 jor.setNombre(res.getString("nombre"));
-                jor.setFechaInicio(res.getString("fechainicio"));
-                jor.setFechaFin(res.getString("fechafin"));
-                jor.setNumPartidoDif(res.getInt("numpardiferidos"));
-                jor.setFechaParDif(res.getString("fechapardiferido"));
-                jor.setIdPartido(res.getInt("idpartido"));
+                jor.setCantPar(res.getInt("catpartidos"));
+                jor.setVictorias(res.getInt("victorias"));
+                jor.setEmpate(res.getInt("empate"));
+                jor.setDerrota(res.getInt("derrotas"));
+                jor.setaFavor(res.getInt("afavor"));
+                jor.setEncontra(res.getInt("encontra"));
+                jor.setDiferencia(res.getInt("diferencia"));
+                jor.setPuntos(res.getInt("puntos"));
                 ljr.add(jor);
             }
         } catch (Exception e) 
@@ -52,16 +61,20 @@ public class CrudJornada extends Conexion
         {
             this.conectar();
             sql="INSERT INTO public.jornada(\n" 
-            +"idjornada, nombre, fechainicio, fechafin, numpardiferidos, fechapardiferido, idpartido)\n" 
-            +"VALUES (?, ?, ?, ?, ?, ?, ?);";
+            +"idjornada, idequipo, nombre, catpartidos, victorias, empate, derrotas, afavor, encontra, diferencia, puntos)\n" 
+            +"VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
             pre=this.getCon().prepareStatement(sql);
             pre.setInt(1, jor.getIdJornada());
-            pre.setString(2, jor.getNombre());
-            pre.setString(3, jor.getFechaInicio());
-            pre.setString(4, jor.getFechaFin());
-            pre.setInt(5, jor.getNumPartidoDif());
-            pre.setString(6, jor.getFechaParDif());
-            pre.setInt(7, jor.getIdPartido());
+            pre.setInt(2, jor.getIdEquipo());
+            pre.setString(3, jor.getNombre());
+            pre.setInt(4, jor.getCantPar());
+            pre.setInt(5, jor.getVictorias());
+            pre.setInt(6, jor.getEmpate());
+            pre.setInt(7, jor.getDerrota());
+            pre.setInt(8, jor.getaFavor());
+            pre.setInt(9, jor.getEncontra());
+            pre.setInt(10, jor.getDiferencia());
+            pre.setInt(11, jor.getPuntos());
             pre.executeUpdate();
         } catch (Exception e) 
         {
@@ -74,17 +87,21 @@ public class CrudJornada extends Conexion
         try 
         {
            this.conectar();
-           sql="UPDATE public.jornada\n"
-            +"SET nombre=?, fechainicio=?, fechafin=?, numpardiferidos=?, fechapardiferido=?, idpartido=?\n"
-            +"WHERE idjornada=?";
-            pre=this.getCon().prepareStatement(sql);
-            pre.setString(1, jor.getNombre());
-            pre.setString(2, jor.getFechaInicio());
-            pre.setString(3, jor.getFechaFin());
-            pre.setInt(4, jor.getNumPartidoDif());
-            pre.setString(5, jor.getFechaParDif());
-            pre.setInt(6, jor.getIdPartido());
-            pre.setInt(7, jor.getIdJornada());
+           sql="UPDATE public.jornada\n" +
+"	SET idequipo=?, nombre=?, catpartidos=?, victorias=?, empate=?, derrotas=?, afavor=?, encontra=?, diferencia=?, puntos=?\n" +
+"	WHERE idjornada=?";
+            pre=this.getCon().prepareStatement(sql); 
+            pre.setInt(1, jor.getIdEquipo());
+            pre.setString(2, jor.getNombre());
+            pre.setInt(3, jor.getCantPar());
+            pre.setInt(4, jor.getVictorias());
+            pre.setInt(5, jor.getEmpate());
+            pre.setInt(6, jor.getDerrota());
+            pre.setInt(7, jor.getaFavor());
+            pre.setInt(8, jor.getEncontra());
+            pre.setInt(9, jor.getDiferencia());
+            pre.setInt(10, jor.getPuntos());
+            pre.setInt(11, jor.getIdJornada());
             pre.executeUpdate();
         } catch (Exception e) 
         {
@@ -128,36 +145,188 @@ public class CrudJornada extends Conexion
         return cont;
     }
     
-    public List<Partido>viewPar()throws Exception
-   {
-       List<Partido>lpar=new ArrayList<>();
-       try 
-       {
-         this.conectar();
-         sql="select * from partido";
-         pre=this.getCon().prepareCall(sql);
-         res=pre.executeQuery();
-           while (res.next()) 
-           {               
-               Partido par=new Partido();
-               par.setIdPartido(res.getInt("idpartido"));
-               par.setNombre(res.getString("nombrepar"));
-               par.setTipoPartido(res.getString("tipopartido"));
-               par.setNumGoles(res.getInt("numgoles"));
-               par.setFecha(res.getString("fechapar"));
-               par.setIdEquipo(res.getInt("idequipo"));
-               par.setEqVisitante(res.getString("eqvisitante"));
-               par.setEqLocal(res.getString("eqlocal"));
-               par.setMarcadorVisi(res.getInt("marcadorvisitante"));
-               par.setMarcadorLocal(res.getInt("marcadorlocal"));
-               par.setIdEquipo(res.getInt("idequipo"));
-               par.setIdDetalle(res.getInt("iddetalle"));
-               lpar.add(par);
-           }
-       } catch (Exception e) 
-       {
-           throw e;
-       }
-       return lpar;
-   }
+    public List<Equipo>viewEq()throws Exception
+    {
+        List<Equipo>leq=new ArrayList<>();
+        try 
+        {
+            this.conectar();
+            sql="select * from equipo";
+            pre=this.getCon().prepareCall(sql);
+            res=pre.executeQuery();
+            while (res.next()) 
+            {                
+                Equipo eq=new Equipo();
+                eq.setIdEq(res.getInt("idequipo"));
+                eq.setNombre(res.getString("nombre"));
+                eq.setNumJugadores(res.getInt("numjugadores"));
+                eq.setNumAmonestado(res.getInt("numamonestados"));
+                eq.setEmail(res.getString("correo"));
+                eq.setDireccion(res.getString("direccion"));
+                eq.setTipoEq(res.getString("tipoequipo"));
+                eq.setTelefono(res.getString("telefono"));
+                eq.setCantGoles(res.getInt("cantgoles"));
+                eq.setIdEntrenador(res.getInt("identrenador"));
+                eq.setIdJugador(res.getInt("idjugador"));
+                eq.setPuntaje(res.getInt("puntaje"));
+                leq.add(eq);
+            }
+            
+        } catch (Exception e) 
+        {
+            throw e;
+        }
+        return leq;
+    }
+    //:D
+    
+    public List<Jornada>viewJA()throws Exception
+    {
+        List<Jornada>ljA=new ArrayList<>();
+        try 
+        {
+            this.conectar();
+            sql="select * from jornada where nombre='Jornada A'";
+            pre=this.getCon().prepareCall(sql);
+            res=pre.executeQuery();
+            while (res.next()) 
+            {                
+                Jornada jor=new Jornada();
+                jor.setIdJornada(res.getInt("idjornada"));
+                jor.setIdEquipo(res.getInt("idequipo"));
+                jor.setNombre(res.getString("nombre"));
+                jor.setCantPar(res.getInt("catpartidos"));
+                jor.setVictorias(res.getInt("victorias"));
+                jor.setEmpate(res.getInt("empate"));
+                jor.setDerrota(res.getInt("derrotas"));
+                jor.setaFavor(res.getInt("afavor"));
+                jor.setEncontra(res.getInt("encontra"));
+                jor.setDiferencia(res.getInt("diferencia"));
+                jor.setPuntos(res.getInt("puntos"));
+                ljA.add(jor);
+            }
+        } catch (Exception e) 
+        {
+            throw e;
+        }
+        return ljA;
+    }
+    
+    public List<Jornada>viewJB()throws Exception
+    {
+        List<Jornada>ljA=new ArrayList<>();
+        try 
+        {
+            this.conectar();
+            sql="select * from jornada where nombre='Jornada B'";
+            pre=this.getCon().prepareCall(sql);
+            res=pre.executeQuery();
+            while (res.next()) 
+            {                
+                Jornada jor=new Jornada();
+                jor.setIdJornada(res.getInt("idjornada"));
+                jor.setIdEquipo(res.getInt("idequipo"));
+                jor.setNombre(res.getString("nombre"));
+                jor.setCantPar(res.getInt("catpartidos"));
+                jor.setVictorias(res.getInt("victorias"));
+                jor.setEmpate(res.getInt("empate"));
+                jor.setDerrota(res.getInt("derrotas"));
+                jor.setaFavor(res.getInt("afavor"));
+                jor.setEncontra(res.getInt("encontra"));
+                jor.setDiferencia(res.getInt("diferencia"));
+                jor.setPuntos(res.getInt("puntos"));
+                ljA.add(jor);
+            }
+        } catch (Exception e) 
+        {
+            throw e;
+        }
+        return ljA;
+    }
+    
+    public List<Jornada>viewJC()throws Exception
+    {
+        List<Jornada>ljA=new ArrayList<>();
+        try 
+        {
+            this.conectar();
+            sql="select * from jornada where nombre='Jornada C'";
+            pre=this.getCon().prepareCall(sql);
+            res=pre.executeQuery();
+            while (res.next()) 
+            {                
+                Jornada jor=new Jornada();
+                jor.setIdJornada(res.getInt("idjornada"));
+                jor.setIdEquipo(res.getInt("idequipo"));
+                jor.setNombre(res.getString("nombre"));
+                jor.setCantPar(res.getInt("catpartidos"));
+                jor.setVictorias(res.getInt("victorias"));
+                jor.setEmpate(res.getInt("empate"));
+                jor.setDerrota(res.getInt("derrotas"));
+                jor.setaFavor(res.getInt("afavor"));
+                jor.setEncontra(res.getInt("encontra"));
+                jor.setDiferencia(res.getInt("diferencia"));
+                jor.setPuntos(res.getInt("puntos"));
+                ljA.add(jor);
+            }
+        } catch (Exception e) 
+        {
+            throw e;
+        }
+        return ljA;
+    }
+    public List<Jornada>viewJD()throws Exception
+    {
+        List<Jornada>ljA=new ArrayList<>();
+        try 
+        {
+            this.conectar();
+            sql="select * from jornada where nombre='Jornada D'";
+            pre=this.getCon().prepareCall(sql);
+            res=pre.executeQuery();
+            while (res.next()) 
+            {                
+                Jornada jor=new Jornada();
+                jor.setIdJornada(res.getInt("idjornada"));
+                jor.setIdEquipo(res.getInt("idequipo"));
+                jor.setNombre(res.getString("nombre"));
+                jor.setCantPar(res.getInt("catpartidos"));
+                jor.setVictorias(res.getInt("victorias"));
+                jor.setEmpate(res.getInt("empate"));
+                jor.setDerrota(res.getInt("derrotas"));
+                jor.setaFavor(res.getInt("afavor"));
+                jor.setEncontra(res.getInt("encontra"));
+                jor.setDiferencia(res.getInt("diferencia"));
+                jor.setPuntos(res.getInt("puntos"));
+                ljA.add(jor);
+            }
+        } catch (Exception e) 
+        {
+            throw e;
+        }
+        return ljA;
+    }
+    
+    
+    public List<Equipo>n()throws Exception
+    {
+        List<Equipo>n= new ArrayList<>();
+        try 
+        {
+            this.conectar();
+            sql="select nombre fron equipo";
+            pre=this.getCon().prepareStatement(sql);
+            res=pre.executeQuery();
+            while (true) 
+            {                
+                Equipo q= new Equipo();
+                q.setNombre(res.getString("nombre"));
+                n.add(q);
+            }
+        } catch (Exception e) {
+        }
+        return n;
+    }
+    
+    
 }

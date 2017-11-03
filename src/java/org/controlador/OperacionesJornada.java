@@ -39,12 +39,18 @@ public class OperacionesJornada extends HttpServlet {
         try 
         {
             jor.setIdJornada(Integer.parseInt(request.getParameter("id")));
-            jor.setNombre(request.getParameter("jornada"));
-            jor.setFechaInicio(request.getParameter("inicio"));
-            jor.setFechaFin(request.getParameter("finalizacion"));
-            jor.setNumPartidoDif(Integer.parseInt(request.getParameter("pdiferido")));
-            jor.setFechaParDif(request.getParameter("fpdiferido"));
-            jor.setIdPartido(Integer.parseInt(request.getParameter("partido")));
+            jor.setIdEquipo(Integer.parseInt(request.getParameter("nEq")));
+            jor.setNombre(request.getParameter("nom"));
+            jor.setCantPar(Integer.parseInt(request.getParameter("cant")));
+            jor.setVictorias(Integer.parseInt(request.getParameter("victoria")));
+            jor.setEmpate(Integer.parseInt(request.getParameter("empate")));
+            jor.setDerrota(Integer.parseInt(request.getParameter("derrotas")));
+            jor.setaFavor(Integer.parseInt(request.getParameter("afavor")));
+            jor.setEncontra(Integer.parseInt(request.getParameter("encontra")));
+            jor.setDiferencia(Integer.parseInt(request.getParameter("diferencia")));
+            jor.setPuntos(Integer.parseInt(request.getParameter("puntos")));
+            
+            
             if (request.getParameter("insertar")!=null) 
             {
                 cj.add(jor);

@@ -12,52 +12,49 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Index</title>
-        <meta charset="utf-8">
+        <title>Principal</title>
+        <meta charset="utf-8">s
         <link rel="shortcut icon" href="../Imagenes/2.jpg"/>
         <meta name="viewport" content="width=device-width, initial-scale=no , user-scalable=no">
         <!-- complementos de javascrip-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <meta http-equiv="REFRESH" content="0.50; URL=http://localhost:26039/Futboll/faces/Principal.jsp">
+        <meta http-equiv="REFRESH" content="3; URL=http://localhost:26039/Futboll/faces/Jugador.jsp">
         <link rel="stylesheet" href="../bootstrap-3.3.6-dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/tables.css" />
         <link rel="stylesheet"  type=" text/css" href="../css/MeStyle.css" >
     </head>
     <body >
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="navabr-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-1">
-                    <span class="sr-only">Menu</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"> </span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar-1">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                        <font color="white" size="5" face="Arial black">Liga Sivar</font>
+                    </a>
+                </div>
                 <ul class="nav navbar-nav">
-                    <a class="navbar-brand" href="index.jsp"><font color="white">SIVAR LIGA</font></a>
-
-                    <li><a href="./Admin/Arbitro.jsp">Arbitro</a>
+                   <li><a href="jugador.jsp">Gestionar Jugador</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Gestionar Partidos
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="Partido.jsp">Partido</a></li>
+                            <li><a href="Equipo.jsp">Equipo</a></li>
+                            <li><a href="Detalle.jsp">Detalle de Partido</a></li>
+                            <li><a href="Incidencias.jsp">Incidencias</a></li>
+                            <li><a href="Entrenador.jsp">Entrenador</a></li>
+                        </ul>
                     </li>
-                    <li><a href="./Admin/Detalle.jsp">Detalle de Partido</a>
-                    </li>
-                    <li><a href="./Admin/Entrenador.jsp">Entrenador</a>
-                    </li>
-                    <li><a href="./Admin/Equipo.jsp">Equipo</a>
-                    </li>
-                    <li><a href="./Admin/Incidencias.jsp">Incidencias</a>
-                    </li>
-
-                    <li><a href="./Admin/usuarios.jsp">Usuarios</a>
-                    </li>
-                    <ul class="nav navbar-nav navbar-right" >
-                        <li><a href="login.jsp"><font>Iniciar Sesion</font></a></li>
-                    </ul>
+                    <li><a href="Arbitro.jsp">Gestionar Arbitro</a></li>
+                    <li><a href="usuarios.jsp">Usuarios</a></li>
+                    <li><a href="Jornada.jsp">Jornada</a></li>
+                    <li><a href="Torneo.jsp">Torneo</a></li>
                 </ul>
-            </div>     
-        </div>    
-    </nav>
+                <ul class="nav navbar-nav navbar-right" >
+                    <li><a href="login.jsp"><span class="glyphicon glyphicon-log-in"></span><font> Cerrar Sesion</font></a></li>
+                </ul>
+            </div>
+        </nav>
     <br><br><br>
     <header>
         <div class="container">
@@ -103,14 +100,13 @@
             <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <font face="Arial black" size="5">Los mejores jugadores de nuestros Equipo !!QUE LO DIFRUTES!!</font>
                 <table class="table table-striped table-hover table-condensed">
-
                     <tr>
                         <th class="danger" hidden="true">Codigo de Jugador</th>
                         <th class="danger">Nombre</th>
-                        <th class="danger">DUI</th>
+                        <th class="danger" hidden="true">DUI</th>
                         <th class="danger">Posicion</th>
                         <th class="danger">Pais</th>
-                        <th class="danger">Telefono</th>
+                        <th class="danger" hidden="true">Telefono</th>
                         <th class="danger">Correo</th>
                     </tr>
 
@@ -122,10 +118,10 @@
                     <tr>
                         <td hidden="true"><%= ju.getIdJugador()%></td>
                         <td ><%= ju.getNombre()%></td>
-                        <td ><%= ju.getDui()%></td>
+                        <td hidden="true"><%= ju.getDui()%></td>
                         <td ><%= ju.getPosicion()%></td>
                         <td ><%= ju.getPais()%></td>
-                        <td ><%= ju.getTelefono()%></td>
+                        <td hidden="true"><%= ju.getTelefono()%></td>
                         <td ><%=ju.getEmail()%></td>
 
                     </tr>
@@ -157,6 +153,7 @@
             </div>
             <div class="color1 col-xs-12 col-sm-6 col-md-3">
                 <center><font face="Arial black" size="5" col > Valores</font></center>
+                <center><img src="Imagenes/wowo.png" width="75" height="75"></center>
                 <ul>
                     <li>Innovación.</li>
                     <li>Responsabilidad.</li>
@@ -166,6 +163,7 @@
             </div>
             <div class="color2 col-xs-12 col-sm-6 col-md-3">
                 <center><font face="Arial black" size="5" col > Objetivos</font></center>
+                <center><img src="Imagenes/wowo.png" width="75" height="75"></center>
                 <font size="3">
                 <ul>
                     <li> Presentarle lo ultimo en la informacion de futbol</li>

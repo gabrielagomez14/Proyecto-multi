@@ -221,32 +221,38 @@ public class CrudTorneo extends Conexion
         return lju;
     }
     
-    public List<Jornada>viewJornada()throws Exception
+    public List<Equipo>viewJornada()throws Exception
     {
-        List<Jornada>ljr=new ArrayList<>();
+        List<Equipo>leq=new ArrayList<>();
         try 
         {
             this.conectar();
-            sql="select * from jornada";
+            sql="select * from equipo";
             pre=this.getCon().prepareCall(sql);
             res=pre.executeQuery();
             while (res.next()) 
             {                
-                Jornada jor=new Jornada();
-                jor.setIdJornada(res.getInt("idjornada"));
-                jor.setNombre(res.getString("nombre"));
-                jor.setFechaInicio(res.getString("fechainicio"));
-                jor.setFechaFin(res.getString("fechafin"));
-                jor.setNumPartidoDif(res.getInt("numpardiferidos"));
-                jor.setFechaParDif(res.getString("fechapardiferido"));
-                jor.setIdPartido(res.getInt("idpartido"));
-                ljr.add(jor);
+                Equipo eq=new Equipo();
+                eq.setIdEq(res.getInt("idequipo"));
+                eq.setNombre(res.getString("nombre"));
+                eq.setNumJugadores(res.getInt("numjugadores"));
+                eq.setNumAmonestado(res.getInt("numamonestados"));
+                eq.setEmail(res.getString("correo"));
+                eq.setDireccion(res.getString("direccion"));
+                eq.setTipoEq(res.getString("tipoequipo"));
+                eq.setTelefono(res.getString("telefono"));
+                eq.setCantGoles(res.getInt("cantgoles"));
+                eq.setIdEntrenador(res.getInt("identrenador"));
+                eq.setIdJugador(res.getInt("idjugador"));
+                eq.setPuntaje(res.getInt("puntaje"));
+                leq.add(eq);
             }
+            
         } catch (Exception e) 
         {
             throw e;
         }
-        return ljr;
+        return leq;
     }
     
 }

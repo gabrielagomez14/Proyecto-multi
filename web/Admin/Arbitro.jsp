@@ -278,7 +278,7 @@ HttpSession sesion = request.getSession();
                         </tbody>
                     </table>
                     </center>
-            </div>
+    </div><hr>
     <center><table>
                     <thead>
                         <tr>
@@ -301,7 +301,7 @@ HttpSession sesion = request.getSession();
                             </td>
                         </tr>
                     </thead>
-                </table></center>
+            </table></center><hr>
     <table  border="1" class="table table-striped table-bordered table-hover table-condensed">
 
         <tr>
