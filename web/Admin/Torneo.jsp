@@ -36,14 +36,14 @@ HttpSession sesion = request.getSession();
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <title>Mantenimiento de Torneo</title>
         <script Language='JavaScript'>
-            function cargar(id, nom, u, c, g, seg, ter, cuar, fI, fF, des, ie, juga, jorna)
+            function cargar(id, nom, u, gol, cam, gole,seg, ter, cuar, fI, fF, des, ie, juga, jorna)
             {
                 document.frmTorneo.id.value = id;
                 document.frmTorneo.nombre.value = nom;
                 document.frmTorneo.ubicacion.value = u;
-                document.frmTorneo.goles.value = c;
-                document.frmTorneo.campeon.value = c;
-                document.frmTorneo.goleador.value = g;
+                document.frmTorneo.goles.value = gol;
+                document.frmTorneo.campeon.value = cam;
+                document.frmTorneo.goleador.value = gole;
                 document.frmTorneo.segundo.value = seg;
                 document.frmTorneo.tercer.value = ter;
                 document.frmTorneo.cuartos.value = cuar;
@@ -207,11 +207,11 @@ HttpSession sesion = request.getSession();
                     <tr>
                         <td><label class="control-label col-xs-3" >Fecha de Inicio </label></td>
                         <td>
-                            <input type="date" class="form-control" name="fechaI" value="" placeholder="Ingrese su nombre" required>
+                            <input type="date" class="form-control" name="fechaI" value="" placeholder="Ingrese Apellido de Entrenador" required>
                         </td>
                         <td><label class="control-label col-xs-3" >Fecha de Finalizacion</label></td>
                         <td>
-                            <input type="date" class="form-control" name="fechaF"  placeholder="Ingrese su codigo de Arbitro" required>
+                            <input type="date" class="form-control" name="fechaF" value="" placeholder="Ingrese Apellido de Entrenador" required>
                         </td>
                     </tr>
                     <tr>

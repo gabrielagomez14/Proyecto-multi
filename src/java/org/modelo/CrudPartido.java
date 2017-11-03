@@ -74,10 +74,9 @@ public class CrudPartido extends Conexion {
     public void update(Partido par) throws Exception {
         try {
             this.conectar();
-            sql = "UPDATE public.partido\n"
-                    + "SET nombrepar=?, tipopartido=?, numgoles=?, fechapar=?, idequipo=?, eqvisitante=?, eqlocal=?,"
-                    + " marcadorvisitante=?, marcadorlocal=?, idarbitro=?, iddetalle=?\n"
-                    + "WHERE idpartido=?";
+            sql = "UPDATE public.partido\n" 
+            +"SET nombrepar=?, tipopartido=?, numgoles=?, fechapar=?, idequipo=?, eqvisitante=?, eqlocal=?, marcadorvisitante=?, marcadorlocal=?, idarbitro=?, iddetalle=?\n" 
+            +"WHERE idpartido=?";
             pre = this.getCon().prepareStatement(sql);
             pre.setString(1, par.getNombre());
             pre.setString(2, par.getTipoPartido());

@@ -188,7 +188,7 @@
                         </td>
                         <td>
                             <div class="col-xs-15"><font face="arial-black" size="4">
-                                <input type="number" class="form-control" name="cantg" value="" placeholder="Ingresar cantidad de Goles" max="11" min="9" required>
+                                <input type="number" class="form-control" name="cantg" value="" placeholder="Ingresar cantidad de Goles"  required>
                                 </font>
                             </div>
                         </td>

@@ -36,20 +36,20 @@ HttpSession sesion = request.getSession();
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <title>Mantenimiento de Partido</title>
         <script Language='JavaScript'>
-            function cargar(id, nom, parti, goles, fecha, cEqui, eqVisi,eqlocal, mVisi, mLoca, arbi, detalle)
+            function cargar(id,nom,par,gol,fechas,ceq,visi,local,mvisi,mlocal,arbi,deta)
             {
-                document.frmPartido.id.value = id;
-                document.frmPartido.nombre.value = nom;
-                document.frmPartido.tPartido.value = parti;
-                document.frmPartido.cGoles.value = goles;
-                document.frmPartido.fecha.value = fecha;
-                document.frmPartido.cEq.value = cEqui;
-                document.frmPartido.eqVisi.value = eqVisi;
-                document.frmPartido.eqLocal.value = eqlocal;
-                document.frmPartido.mEqLo.value = mVisi;
-                document.frmPartido.mEqVisi.value = mLoca;
-                document.frmPartido.arbitro.value = arbi;
-                document.frmPartido.detalle.value = detalle;
+                document.frmPartido.id.value=id;
+                document.frmPartido.nombre.value=nom;
+                document.frmPartido.tPartido.value=par;
+                document.frmPartido.cGoles.value=gol;
+                document.frmPartido.fecha.value=fechas;
+                document.frmPartido.cEq.value=ceq;
+                document.frmPartido.eqVisitante.value=visi;
+                document.frmPartido.eqLocal.value=local;
+                document.frmPartido.mEqVisi.value=mvisi;
+                document.frmPartido.mEqLo.value=mlocal;
+                document.frmPartido.arbitro.value=arbi;
+                document.frmPartido.detalle.value=deta;  
             }
         </script>
         <%
@@ -156,8 +156,7 @@ HttpSession sesion = request.getSession();
                                     <label for="sel1" class="control-label col-xs-2">Fecha Partido</label>
                                     <div class="col-xs-6"> 
                                         <div class="col-lg">
-                                            <input type="date" class="form-control" name="fecha" value="" 
-                                                   placeholder="Ingrese su nombre" required min="0">
+                                            <input type="date" class="form-control" name="fecha" value="" placeholder="Ingrese Apellido de Entrenador" required>
                                         </div>
                                     </div>
                                 </td>
@@ -187,7 +186,7 @@ HttpSession sesion = request.getSession();
                                                 List<Equipo> leq = cpar.Visitante();
                                                 for (Equipo par : leq) {
                                             %>
-                                            <option value="<%=par.getIdEq()%>"><%=par.getNombre()%></option>
+                                            <option value="<%=par.getNombre()%>"><%=par.getNombre()%></option>
                                             <%
                                                 }%>
                                         </select>
@@ -203,7 +202,7 @@ HttpSession sesion = request.getSession();
                                                 List<Equipo> leql = cpar.Local();
                                                 for (Equipo par : leql) {
                                             %>
-                                            <option value="<%=par.getIdEq()%>"><%=par.getNombre()%></option>
+                                            <option value="<%=par.getNombre()%>"><%=par.getNombre()%></option>
                                             <%
                                     }%>
                                         </select>
@@ -215,8 +214,24 @@ HttpSession sesion = request.getSession();
                                     <label for="sel1" class="control-label col-xs-2">Marcador Eq Local</label>
                                 </td>
                                 <td>
+                                    <div class="col-xs-15"> 
+                                        <select class="form-control" id="sel1" name="mEqVisi">
+                                            <%
+                                                List<Equipo> lmv = cpar.mVisitante();
+                                                for (Equipo par : lmv) 
+                                                {
+                                            %>
+                                            <option value="<%=par.getCantGoles()%>"><%=par.getCantGoles()%></option>
+                                            <%}%>
+                                        </select> 
+                                    </div>
+                                </td>
+                                <td>
+                                    <label for="sel1" class="control-label col-xs-2">Marcador Equipo Visitante</label>
+                                </td>
+                                <td>
                                     <div class="col-xs-15" > 
-                                        <select class="form-control" id="sel1" name="mEqLo">
+                                        <select class="form-control"  name="mEqLo">
                                             <%
                                                 List<Equipo> lml = cpar.mLocal();
                                                 for (Equipo par : lml) {
@@ -225,22 +240,6 @@ HttpSession sesion = request.getSession();
                                             <%
                                     }%>
                                         </select>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label for="sel1" class="control-label col-xs-2">Marcador Equipo Visitante</label>
-                                </td>
-                                <td>
-                                    <div class="col-xs-15"> 
-                                        <select class="form-control" id="sel1" name="mEqVisi">
-                                            <%
-                                                List<Equipo> lmv = cpar.mVisitante();
-                                                for (Equipo par : lmv) {
-                                            %>
-                                            <option value="<%=par.getCantGoles()%>"><%=par.getCantGoles()%></option>
-                                            <%
-                                    }%>
-                                        </select> 
                                     </div>
                                 </td>
                             </tr>
@@ -253,11 +252,11 @@ HttpSession sesion = request.getSession();
                                         <select class="form-control" id="sel1" name="arbitro">
                                             <%
                                                 List<Arbitro> lar = cpar.viewarbi();
-                                                for (Arbitro dp : lar) {
+                                                for (Arbitro ar : lar) {
                                             %>
-                                            <option value="<%=dp.getIdArbitro()%>"><%=dp.getNombre()%></option>
+                                            <option value="<%=ar.getIdArbitro()%>"><%=ar.getNombre() %></option>
                                             <%}%>
-                                        </select>   
+                                        </select>  
                                     </div> 
                                 </td>
                                 <td>
@@ -279,7 +278,7 @@ HttpSession sesion = request.getSession();
                         </tbody>
                     </table>
                     </center>
-            </div>
+    </div><hr>
     <center><table>
                     <thead>
                         <tr>
@@ -302,7 +301,7 @@ HttpSession sesion = request.getSession();
                             </td>
                         </tr>
                     </thead>
-                </table></center>
+            </table></center><hr>
     <table  border="1" class="table table-striped table-bordered table-hover table-condensed">
 
         <tr>
@@ -311,7 +310,7 @@ HttpSession sesion = request.getSession();
             <th class="danger">Tipo</th>
             <th class="danger">N° Goles</th>
             <th class="danger">Fecha</th>
-            <th class="danger" hidden="true">id Equipo</th>
+            <th class="danger">id Equipo</th>
             <th class="danger">Eq.Visitante</th>
             <th class="danger">Eq.Local</th>
             <th class="danger">Marc.Visitante</th>
@@ -330,27 +329,25 @@ HttpSession sesion = request.getSession();
             <td class="success"><%= parti.getTipoPartido()%></td>
             <td class="success"><%= parti.getNumGoles()%></td>
             <td class="success"><%= parti.getFecha()%></td>
-            <td class="success" hidden=""><%= parti.getIdEquipo()%></td>
+            <td class="success" ><%= parti.getIdEquipo()%></td>
             <td class="success"><%=parti.getEqVisitante()%></td>
             <td class="success"><%=parti.getEqLocal()%></td>
             <td class="success"><%=parti.getMarcadorVisi()%></td>
             <td class="success"><%=parti.getMarcadorLocal()%></td>
             <td class="success"><%=parti.getIdArb()%></td>
             <td class="success"><%=parti.getIdDetalle()%></td>
-            <td class="success"><a href="javascript:cargar(<%= parti.getIdPartido()%>,
-                                   '<%= parti.getNombre()%>',
-                                   '<%= parti.getTipoPartido()%>',
-                                   '<%= parti.getNumGoles()%>',
-                                   '<%= parti.getNumGoles()%>',
-                                   '<%= parti.getFecha()%>',
-                                   '<%= parti.getIdEquipo()%>',
-                                   '<%=parti.getEqVisitante()%>',
-                                   '<%=parti.getEqLocal()%>',
-                                   '<%=parti.getMarcadorVisi()%>',
-                                   '<%=parti.getMarcadorLocal()%>',
-                                   '<%=parti.getIdArb()%>',
-                                   '<%=parti.getIdDetalle()%>'
-                                   )">Seleccionar</a></td>
+           <td><a href="javascript:cargar(<%=parti.getIdPartido()%>,
+                             '<%=parti.getNombre()%>',
+                             '<%=parti.getTipoPartido()%>',
+                             '<%=parti.getNumGoles()%>',
+                             '<%=parti.getFecha()%>',
+                             '<%=parti.getIdEquipo()%>',
+                             '<%=parti.getEqVisitante()%>',
+                             '<%=parti.getEqLocal()%>',
+                             '<%=parti.getMarcadorVisi()%>',
+                             '<%=parti.getMarcadorLocal()%>',
+                             '<%=parti.getIdArb()%>',
+                             '<%=parti.getIdDetalle()%>')">Seleccionar</a></td>
         </tr>
         <%
             }
