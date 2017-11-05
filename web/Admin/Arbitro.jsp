@@ -1,16 +1,32 @@
 <%-- 
     Document   : Arbitro
     Created on : Oct 14, 2017, 2:17:59 PM
-    Author     : monterroso
+    Author     : Ale Gomez
 --%>
 
 <%@page import="org.modelo.*"%>
 <%@page import="java.util.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page  session="true" %>
+<%
+HttpSession sesion = request.getSession();
+    if (sesion.getAttribute("nivel")==null) 
+    {
+        response.sendRedirect("login.jsp");
+    }else
+    {
+        String nivel= sesion.getAttribute("nivel").toString();
+        if (!nivel.equals("1")) 
+        {
+                response.sendRedirect("login.jsp");
+        }
+    }
+%>
 <!DOCTYPE html>
 <html>
     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Mantenimiento Arbitro</title>
         <meta charset="utf-8">
         <link rel="shortcut icon" href="../Imagenes/2.jpg"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,7 +34,8 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="../bootstrap-3.3.6-dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/tables.css" />
-        <title>Mantenimiento de Arbitro</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script Language='JavaScript'>
             function cargar(id, nom, ape, sue, cate, rol, eq)
             {
@@ -55,7 +72,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="Partido.jsp">Partido</a></li>
                             <li><a href="Equipo.jsp">Equipo</a></li>
-                            <li><a href="#">Detalle de Partido</a></li>
+                            <li><a href="Detalle.jsp">Detalle de Partido</a></li>
                             <li><a href="Incidencias.jsp">Incidencias</a></li>
                             <li><a href="Entrenador.jsp">Entrenador</a></li>
                         </ul>
@@ -69,7 +86,7 @@
                     <li><a href="../login.jsp?cerrar=true"><span class="glyphicon glyphicon-log-in"></span><font> Cerrar Sesion</font></a></li>
                 </ul>
             </div>
-        </nav>         
+        </nav>        
     </header>
     <script src="js/jquery-latest.js"></script> 
     <script src="../bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
@@ -141,7 +158,7 @@
                                 List<Equipo> lEq = car.viewEq();
                                 for (Equipo eq : lEq) {
                             %>
-                            <option value="<%=eq.getIdEq()  %>"><%=eq.getNombre()%></option>
+                            <option value="<%=eq.getIdEq()%>"><%=eq.getNombre()%></option>
                             <%}%>
                         </select>
                     </div>
@@ -182,7 +199,7 @@
             <td class="success"><%= ve.getSueldo()%></td>
             <td class="success"><%= ve.getCategoria()%></td>
             <td class="success"><%= ve.getRolArbi()%></td>
-            <td class="success"><%=ve.getNombreEq() %></td>
+            <td class="success"><%=ve.getIdEquipo()%></td>
             <td class="success"><a href="javascript:cargar(<%=ve.getIdArbitro()%>,
                                    '<%=ve.getNombre()%>',
                                    '<%=ve.getApellido()%>',

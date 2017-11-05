@@ -55,7 +55,7 @@ public class OperacionesTorneos extends HttpServlet {
            tor.setDescenso(request.getParameter("descenso"));
            tor.setIdEq(Integer.parseInt(request.getParameter("idEq")));
            tor.setIdJugador(Integer.parseInt(request.getParameter("jugador")));
-           tor.setIdJornada(request.getParameter("jornada"));
+           tor.setIdJornada(Integer.parseInt(request.getParameter("jornada")));
             if (request.getParameter("insertar")!=null)
             {
                 ct.add(tor);

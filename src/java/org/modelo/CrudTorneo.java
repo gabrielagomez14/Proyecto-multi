@@ -44,7 +44,7 @@ public class CrudTorneo extends Conexion
                 tor.setDescenso(res.getString("descenso"));
                 tor.setIdEq(res.getInt("idequipo"));
                 tor.setIdJugador(res.getInt("idjugador"));
-                tor.setIdJornada(res.getString("idjornada"));
+                tor.setIdJornada(res.getInt("idjornada"));
                 ltor.add(tor);
             }
             
@@ -78,7 +78,7 @@ public class CrudTorneo extends Conexion
             pre.setString(12, tor.getDescenso());
             pre.setInt(13, tor.getIdEq());
             pre.setInt(14, tor.getIdJugador());
-            pre.setString(15, tor.getIdJornada());
+            pre.setInt(15, tor.getIdJornada());
             pre.executeUpdate();
         } catch (Exception e) 
         {
@@ -108,7 +108,7 @@ public class CrudTorneo extends Conexion
             pre.setString(11, tor.getDescenso());
             pre.setInt(12, tor.getIdEq());
             pre.setInt(13, tor.getIdJugador());
-            pre.setString(14, tor.getIdJornada());
+            pre.setInt(14, tor.getIdJornada());
             pre.setInt(15, tor.getIdTorneo());
             pre.executeUpdate();
         } catch (Exception e) 

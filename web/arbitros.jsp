@@ -26,7 +26,7 @@
         <meta http-equiv="REFRESH" content="3; URL=http://localhost:26039/Futboll/faces/arbitros.jsp">
         <link rel="stylesheet" href="../bootstrap-3.3.6-dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/tables.css" />
-        <link rel="stylesheet"  type=" text/css" href="../css/MeStyle.css" >
+        <link rel="stylesheet"  type=" text/css" href="css/MeStyle.css" >
     </head>
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -93,7 +93,7 @@
         <div class="container">
             <hr>
             <center>
-                <font face="Arial black" size="5">!!CONOCE LOS MEJORES ALBITROS DE NUESTROS EQUIPO!!</font>
+                <font face="Arial black" size="5">!!CONOCE LOS MEJORES ARBITROS DE NUESTROS EQUIPO!!</font>
                 <table  border="1" class="table table-striped table-bordered table-hover table-condensed">
 
                     <tr>
@@ -124,14 +124,13 @@
                     </tbody>
                 </table></center><div class="row">
                 <div class="color1 col-xs-12 col-sm-6  col-md-3">
-                    <center><font face="Arial black" size="5" col >Misi&oacute;n</font></center>
-                    <font size="3">
-                    <center><img src="Imagenes/wowo.png" width="75" height="75"></center>
-                    <p>
-                        Proveer a nuestros clientes la informacion actualizada del deporte con alta calidad
-                        que les permitan disfrutar al maximo los mejores momentos de su equipo
-                    </p>
-                    </font>
+                    <center><font face="Arial black" size="2" col >
+                        !!NO TE PIERDAS LAS JUGADAS DE NUESTROSS JUGADORES!!
+                        </font></center>
+                    <video controls poster="Cortos Del Fútbol Nacional.part.mp4"
+                           width="" height="115">
+                        <source src="../Videos/corto.mp4"type="video/mp4"  /> 
+                    </video>
                 </div>
                 <div class="color2 col-xs-12 col-sm-6 col-md-3">
                     <center><font face="Arial black" size="5" col >Visi&oacute;n</font></center>
@@ -165,8 +164,9 @@
         </div>
         <footer>
             <div class="container">
-                <h3>Sivar league</h3>
-            </div>
+            <center><font face="Arial black" size="5" col >Sivar Liga</font>
+            
+            </center></div>
         </footer>
         <script src="http://code.jquery.com/jquery-latest.js" ></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

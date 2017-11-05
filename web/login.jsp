@@ -40,7 +40,8 @@
                           <form role="form" name="login" action="acceso" method="POST">
                             <div class="form-group">
                               <label for="username">Nombre de usuario</label>
-                              <input type="text" class="form-control" id="username" name="userName" placeholder="Nombre de usuario" required>
+                              <input type="text" class="form-control" id="username" name="userName" placeholder="Nombre de usuario" required
+                                     >
                             </div>
                             <div class="form-group">
                               <label for="password">Contrase&ntilde;a</label>

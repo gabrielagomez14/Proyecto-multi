@@ -18,32 +18,31 @@
 
 <!DOCTYPE html>
 <head>
-    <title>Vista Jugador</title>
+    <title>Partidos</title>
 </head>
 <body style="background-color:#026593;">
 
     <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">
-                    <font color="white" size="5" face="Arial black">Liga Sivar</font>
-                </a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li><a href="jugador.jsp"> Jugador</a></li>
-                <li><a href="Arbitro.jsp"> Arbitro</a></li>
-                <li><a href="Partidos.jsp">Partidos</a></li>
-                <li><a href="Jornada.jsp">Jornada</a></li>
-                <li><a href="Torneo.jsp">Torneo</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right" >
-                <li><a href="login.jsp"><font color="white"><span class="glyphicon glyphicon-log-in"></span>
-                        Iniciar Sesi&oacute;n</font>
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                        <font color="white" size="5" face="Arial black">Liga Sivar</font>
                     </a>
-                </li>
-            </ul>
-        </div>
-    </nav> 
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Partidos</a></li>
+                    <li><a href="Jugador.jsp">Jugadores</a></li>
+                    <li><a href="arbitros.jsp">Arbitros</a></li>
+                    <li><a href="clasificaciones.jsp">Clasificaciones</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right" >
+                    <li><a href="login.jsp"><span class="glyphicon glyphicon-log-in"></span><font> Cerrar Sesion</font></a></li>
+                </ul>
+            </div>
+        </nav>
+    <script src="http://code.jquery.com/jquery-latest.js" ></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
     <!-- section: team -->
     <section id="about" class="section">
         <center>

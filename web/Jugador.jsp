@@ -12,7 +12,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Principal</title>
+        <title>Jugadores</title>
         <meta charset="utf-8">s
         <link rel="shortcut icon" href="../Imagenes/2.jpg"/>
         <meta name="viewport" content="width=device-width, initial-scale=no , user-scalable=no">
@@ -33,22 +33,9 @@
                     </a>
                 </div>
                 <ul class="nav navbar-nav">
-                   <li><a href="jugador.jsp">Gestionar Jugador</a></li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Gestionar Partidos
-                            <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="Partido.jsp">Partido</a></li>
-                            <li><a href="Equipo.jsp">Equipo</a></li>
-                            <li><a href="Detalle.jsp">Detalle de Partido</a></li>
-                            <li><a href="Incidencias.jsp">Incidencias</a></li>
-                            <li><a href="Entrenador.jsp">Entrenador</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="Arbitro.jsp">Gestionar Arbitro</a></li>
-                    <li><a href="usuarios.jsp">Usuarios</a></li>
-                    <li><a href="Jornada.jsp">Jornada</a></li>
-                    <li><a href="Torneo.jsp">Torneo</a></li>
+                    <li><a href="Partidos.jsp">Partidos</a></li>
+                    <li><a href="arbitros.jsp">Arbitros</a></li>
+                    <li><a href="clasificaciones.jsp">Clasificaciones</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right" >
                     <li><a href="login.jsp"><span class="glyphicon glyphicon-log-in"></span><font> Cerrar Sesion</font></a></li>
@@ -69,7 +56,7 @@
                     <!-- Contenedor de slides -->
                     <div class="carousel-inner">
                         <div class="item active">
-                            <img src="../Imagenes/f.jpg" alt="" height="400">
+                            <img src="../Imagenes/caro1.1.jpg" alt="" height="200" width="1200" >
                         </div>
 
                         <div class="item">

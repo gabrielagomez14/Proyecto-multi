@@ -12,7 +12,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Index</title>
+        <title>Clasificaciones</title>
         <meta charset="utf-8">
         <link rel="shortcut icon" href="Imagenes/2.jpg"/>
         <meta name="viewport" content="width=device-width, initial-scale=no , user-scalable=no">
