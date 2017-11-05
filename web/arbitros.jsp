@@ -36,7 +36,7 @@
                 </a>
             </div>
             <ul class="nav navbar-nav">
-                <li><a href="jugador.jsp"> Jugador</a></li>
+                <li><a href="Jugador.jsp"> Jugador</a></li>
                 <li><a href="Arbitro.jsp"> Arbitro</a></li>
                 <li><a href="Partidos.jsp">Partidos</a></li>
                 <li><a href="Jornada.jsp">Jornada</a></li>
@@ -94,36 +94,34 @@
             <hr>
             <center>
                 <font face="Arial black" size="5">!!CONOCE LOS MEJORES ARBITROS DE NUESTROS EQUIPO!!</font>
-                <table  border="1" class="table table-striped table-bordered table-hover table-condensed">
-
+                <table class="table table-striped table-hover table-condensed">
                     <tr>
-                        <th class="danger" hidden="true">Codigo</th>
-                        <th class="danger">Nombre</th>
-                        <th class="danger">Apellido</th>
-                        <th class="danger" hidden="true">Sueldo</th>
-                        <th class="danger">Categoria</th>
+                        <th class="danger" >Nombre de Arbitro</th>
+                        <th class="danger">Apellido de Arbitro</th>
+                        <th class="danger" >Categoria</th>
                         <th class="danger">Rol de Arbitro</th>
-                        <th class="danger">Nombre de Equipo</th>
-                        <th class="danger" hidden="true">Seleccionar</th>
+                        <th class="danger">Equipo</th>
                     </tr>
+
                     <%
                         CrudArbitro car = new CrudArbitro();
                         List<Arbitro> lst2 = car.view();
-                        for (Arbitro ve : lst2) {
+                        for (Arbitro ar : lst2) {
                     %>
                     <tr>
-                        <td class="success" hidden="true"><%= ve.getIdArbitro()%></td>
-                        <td class="success" ><%= ve.getNombre()%></td>
-                        <td class="success"><%= ve.getApellido()%></td>
-                        <td class="success" hidden="true"><%= ve.getSueldo()%></td>
-                        <td class="success"><%= ve.getCategoria()%></td>
-                        <td class="success"><%= ve.getRolArbi()%></td>
-                        <td class="success"><%=ve.getIdEquipo() %></td>
+                        <td ><%=ar.getNombre()%></td>
+                        <td ><%=ar.getApellido() %></td>
+                        <td ><%=ar.getCategoria() %></td>
+                        <td ><%=ar.getRolArbi() %></td>
+                        <td ><%=ar.getIdEquipo() %></td>
+
                     </tr>
-                    <%}%>
+                    <%
+                        }
+                    %>
                     </tbody>
                 </table></center><div class="row">
-                <div class="color1 col-xs-12 col-sm-6  col-md-3">
+                <div class="color1 col-xs-12 col-sm-6  col-md-6">
                     <center><font face="Arial black" size="2" col >
                         !!NO TE PIERDAS LAS JUGADAS DE NUESTROSS JUGADORES!!
                         </font></center>
@@ -132,41 +130,23 @@
                         <source src="../Videos/corto.mp4"type="video/mp4"  /> 
                     </video>
                 </div>
-                <div class="color2 col-xs-12 col-sm-6 col-md-3">
+                <div class="color2 col-xs-12 col-sm-6 col-md-6">
                     <center><font face="Arial black" size="5" col >Visi&oacute;n</font></center>
                     <center><img src="Imagenes/wowo.png" width="75" height="75"></center>
                     <p>
                         Ser 
                     </p>
                 </div>
-                <div class="color1 col-xs-12 col-sm-6 col-md-3">
-                    <center><font face="Arial black" size="5" col > Valores</font></center>
-                    <center><img src="Imagenes/wowo.png" width="75" height="75"></center>
-                    <ul>
-                        <li>Innovación.</li>
-                        <li>Responsabilidad.</li>
-                        <li>Compromiso.</li>
-                        <li>Calidad.</li>
-                    </ul>
-                </div>
-                <div class="color2 col-xs-12 col-sm-6 col-md-3">
-                    <center><font face="Arial black" size="5" col > Objetivos</font></center>
-                    <center><img src="Imagenes/wowo.png" width="75" height="75"></center>
-                    <font size="3">
-                    <ul>
-                        <li> Presentarle lo ultimo en la informacion de futbol</li>
-                        <li> </li>
-                        <li> Presentarle lo ultimo en la informacion de futbol</li>
-                    </ul>
-                    </font>
-                </div>
-            </div>
+                
         </div>
         <footer>
             <div class="container">
-            <center><font face="Arial black" size="5" col >Sivar Liga</font>
-            
-            </center></div>
+            <center><font face="Arial black" size="5" col >Sivar Liga</font>&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="../Imagenes/twitter.png" alt=""  >&nbsp;&nbsp;
+            <img src="../Imagenes/insta.png" alt=""  >&nbsp;&nbsp;
+            <img src="../Imagenes/facebook.png" alt=""  >&nbsp;&nbsp;
+            </center>
+        </div>
         </footer>
         <script src="http://code.jquery.com/jquery-latest.js" ></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

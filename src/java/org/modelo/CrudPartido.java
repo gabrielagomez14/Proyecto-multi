@@ -49,9 +49,9 @@ public class CrudPartido extends Conexion {
     public void add(Partido par) throws Exception {
         try {
             this.conectar();
-            sql = "INSERT INTO public.partido(\n"
-                    + "	idpartido, nombrepar, tipopartido, numgoles, fechapar, idequipo, eqvisitante, eqlocal, marcadorvisitante, marcadorlocal, idarbitro, idjornada, iddetalle)\n"
-                    + "	VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+            sql = "INSERT INTO public.partido(\n" 
+            +"idpartido, nombrepar, tipopartido, numgoles, fechapar, idequipo, eqvisitante, eqlocal, marcadorvisitante, marcadorlocal, idarbitro, idjornada, iddetalle)\n" 
+            +"VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
             pre = this.getCon().prepareStatement(sql);
             pre.setInt(1, par.getIdPartido());
             pre.setString(2, par.getNombre());
@@ -75,7 +75,8 @@ public class CrudPartido extends Conexion {
     public void update(Partido par) throws Exception {
         try {
             this.conectar();
-            sql = "UPDATE public.partido\n" +"SET  nombrepar=?, tipopartido=?, numgoles=?, fechapar=?, idequipo=?, eqvisitante=?, eqlocal=?, marcadorvisitante=?, marcadorlocal=?, idarbitro=?, idjornada=?, iddetalle=?\n" 
+            sql = "UPDATE public.partido\n" 
+            +"SET nombrepar=?, tipopartido=?, numgoles=?, fechapar=?, idequipo=?, eqvisitante=?, eqlocal=?, marcadorvisitante=?, marcadorlocal=?, idarbitro=?, idjornada=?, iddetalle=?\n" 
             +"WHERE idpartido=?";
             pre = this.getCon().prepareStatement(sql);
             pre.setString(1, par.getNombre());

@@ -22,7 +22,7 @@
         <meta http-equiv="REFRESH" content="5; URL=http://localhost:26039/Futboll/faces/Jugador.jsp">
         <link rel="stylesheet" href="../bootstrap-3.3.6-dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/tables.css" />
-        <link rel="stylesheet"  type=" text/css" href="../css/MeStyle.css" >
+        <link rel="stylesheet"  type=" text/css" href="css/MeStyle.css" >
     </head>
     <body >
         <nav class="navbar navbar-inverse">
@@ -117,52 +117,15 @@
                     </tbody>
                 </table>
             </article>
-
         </section>
-        <div class="row">
-            <div class="color1 col-xs-12 col-sm-6  col-md-3">
-                <center><font face="Arial black" size="5" col >Misi&oacute;n</font></center>
-                <font size="3">
-                <center><img src="Imagenes/wowo.png" width="75" height="75"></center>
-                <p>
-                    Proveer a nuestros clientes la informacion actualizada del deporte con alta calidad
-                    que les permitan disfrutar al maximo los mejores momentos de su equipo
-                </p>
-                </font>
-            </div>
-            <div class="color2 col-xs-12 col-sm-6 col-md-3">
-                <center><font face="Arial black" size="5" col >Visi&oacute;n</font></center>
-                <center><img src="Imagenes/wowo.png" width="75" height="75"></center>
-                <p>
-                    Ser 
-                </p>
-            </div>
-            <div class="color1 col-xs-12 col-sm-6 col-md-3">
-                <center><font face="Arial black" size="5" col > Valores</font></center>
-                <center><img src="Imagenes/wowo.png" width="75" height="75"></center>
-                <ul>
-                    <li>Innovación.</li>
-                    <li>Responsabilidad.</li>
-                    <li>Compromiso.</li>
-                    <li>Calidad.</li>
-                </ul>
-            </div>
-            <div class="color2 col-xs-12 col-sm-6 col-md-3">
-                <center><font face="Arial black" size="5" col > Objetivos</font></center>
-                <center><img src="Imagenes/wowo.png" width="75" height="75"></center>
-                <font size="3">
-                <ul>
-                    <li> Presentarle lo ultimo en la informacion de futbol</li>
-                    <li> </li>
-                    <li> Presentarle lo ultimo en la informacion de futbol</li>
-                </ul>
-                </font>
-            </div>
-        </div>
-    </div>
+        
     <footer>
         <div class="container">
-            <h3>Sivar league</h3>
+            <center><font face="Arial black" size="5" col >Sivar Liga</font>&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="../Imagenes/twitter.png" alt=""  >&nbsp;&nbsp;
+            <img src="../Imagenes/insta.png" alt=""  >&nbsp;&nbsp;
+            <img src="../Imagenes/facebook.png" alt=""  >&nbsp;&nbsp;
+            </center>
         </div>
     </footer>
 

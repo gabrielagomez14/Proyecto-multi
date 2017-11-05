@@ -143,8 +143,12 @@
         </section>
         <p class="copyright">
             &copy; ITCA FEPADE.
-        <div class="credits">
-            SISTEMA DE TORNEOS DE FUTBOL.<br>
+        <div class="container">
+            <center><font face="Arial black" size="5" col >Sivar Liga</font>&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="../Imagenes/twitter.png" alt=""  >&nbsp;&nbsp;
+            <img src="../Imagenes/insta.png" alt=""  >&nbsp;&nbsp;
+            <img src="../Imagenes/facebook.png" alt=""  >&nbsp;&nbsp;
+            </center>
         </div>
     </p>
 </div>

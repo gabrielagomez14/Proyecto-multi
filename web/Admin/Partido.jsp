@@ -36,7 +36,7 @@ HttpSession sesion = request.getSession();
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <title>Mantenimiento de Partido</title>
         <script Language='JavaScript'>
-            function cargar(id, nom, parti, goles, fecha, cEqui, eqVisi,eqlocal, mVisi, mLoca,j ,arbi, detalle)
+            function cargar(id, nom, parti, goles, fecha, cEqui, eqVisi,eqlocal, mLoca,mVisi ,j ,arbi, detalle)
             {
                 document.frmPartido.id.value = id;
                 document.frmPartido.nombre.value = nom;
@@ -45,9 +45,9 @@ HttpSession sesion = request.getSession();
                 document.frmPartido.fecha.value = fecha;
                 document.frmPartido.cEq.value = cEqui;
                 document.frmPartido.eqVisitante.value = eqVisi;
+                document.frmPartido.mEqVisi.value = mVisi;
                 document.frmPartido.eqLocal.value = eqlocal;
-                document.frmPartido.mEqLo.value = mVisi;
-                document.frmPartido.mEqVisi.value = mLoca;
+                document.frmPartido.mEqLo.value = mLoca;
                 document.frmPartido.jornada.value = j;
                 document.frmPartido.arbitro.value = arbi;
                 document.frmPartido.detalle.value = detalle;
@@ -273,9 +273,9 @@ HttpSession sesion = request.getSession();
                                                 List<Arbitro> lar = cpar.viewarbi();
                                                 for (Arbitro ar : lar) {
                                             %>
-                                            <option value="<%=ar.getIdArbitro()%>"><%=ar.getNombre() %></option>
+                                            <option value="<%=ar.getIdArbitro() %>"><%=ar.getNombre() %></option>
                                             <%}%>
-                                        </select>  
+                                        </select>   
                                     </div> 
                                 </td>
                                 <td>
