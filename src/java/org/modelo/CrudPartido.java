@@ -5,10 +5,9 @@ import java.sql.*;
 import org.conexion.Conexion;
 
 /**
- * Nombre de la clase:CrudPartido 
- * Fecha:17/10/2017 
- * Version:1.0
+ * Nombre de la clase:CrudPartido Fecha:17/10/2017 Version:1.0
  * Copyright:ITCA-FEPADE
+ *
  * @author Ale Gomez
  */
 public class CrudPartido extends Conexion {
@@ -37,6 +36,7 @@ public class CrudPartido extends Conexion {
                 par.setMarcadorVisi(res.getInt("marcadorvisitante"));
                 par.setMarcadorLocal(res.getInt("marcadorlocal"));
                 par.setIdEquipo(res.getInt("idequipo"));
+                par.setIdjornada(res.getInt("idjornada"));
                 par.setIdDetalle(res.getInt("iddetalle"));
                 lpar.add(par);
             }
@@ -50,8 +50,8 @@ public class CrudPartido extends Conexion {
         try {
             this.conectar();
             sql = "INSERT INTO public.partido(\n"
-                    + "idpartido, nombrepar, tipopartido, numgoles, fechapar, idequipo, eqvisitante, eqlocal, marcadorvisitante, marcadorlocal, idarbitro, iddetalle)\n"
-                    + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+                    + "	idpartido, nombrepar, tipopartido, numgoles, fechapar, idequipo, eqvisitante, eqlocal, marcadorvisitante, marcadorlocal, idarbitro, idjornada, iddetalle)\n"
+                    + "	VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
             pre = this.getCon().prepareStatement(sql);
             pre.setInt(1, par.getIdPartido());
             pre.setString(2, par.getNombre());
@@ -64,7 +64,8 @@ public class CrudPartido extends Conexion {
             pre.setInt(9, par.getMarcadorVisi());
             pre.setInt(10, par.getMarcadorLocal());
             pre.setInt(11, par.getIdArb());
-            pre.setInt(12, par.getIdDetalle());
+            pre.setInt(12, par.getIdjornada());
+            pre.setInt(13, par.getIdDetalle());
             pre.executeUpdate();
         } catch (Exception e) {
             throw e;
@@ -74,8 +75,7 @@ public class CrudPartido extends Conexion {
     public void update(Partido par) throws Exception {
         try {
             this.conectar();
-            sql = "UPDATE public.partido\n" 
-            +"SET nombrepar=?, tipopartido=?, numgoles=?, fechapar=?, idequipo=?, eqvisitante=?, eqlocal=?, marcadorvisitante=?, marcadorlocal=?, idarbitro=?, iddetalle=?\n" 
+            sql = "UPDATE public.partido\n" +"SET  nombrepar=?, tipopartido=?, numgoles=?, fechapar=?, idequipo=?, eqvisitante=?, eqlocal=?, marcadorvisitante=?, marcadorlocal=?, idarbitro=?, idjornada=?, iddetalle=?\n" 
             +"WHERE idpartido=?";
             pre = this.getCon().prepareStatement(sql);
             pre.setString(1, par.getNombre());
@@ -88,8 +88,9 @@ public class CrudPartido extends Conexion {
             pre.setInt(8, par.getMarcadorVisi());
             pre.setInt(9, par.getMarcadorLocal());
             pre.setInt(10, par.getIdArb());
-            pre.setInt(11, par.getIdDetalle());
-            pre.setInt(12, par.getIdPartido());
+            pre.setInt(11, par.getIdjornada());
+            pre.setInt(12, par.getIdDetalle());
+            pre.setInt(13, par.getIdPartido());
             pre.executeUpdate();
         } catch (Exception e) {
             throw e;
@@ -97,9 +98,10 @@ public class CrudPartido extends Conexion {
     }
 
     public void delete(Partido par) throws Exception {
-        try {
+        try 
+        {
             this.conectar();
-            sql = "DELETE FROM public.partido\n" + "WHERE idpartido=?";
+            sql = "DELETE FROM public.partido\n" +"WHERE idpartido=?";
             pre = this.getCon().prepareStatement(sql);
             pre.setInt(1, par.getIdPartido());
             pre.executeUpdate();
@@ -126,9 +128,8 @@ public class CrudPartido extends Conexion {
 
     /*
     *    Muestro de detalle
-    */
-    public List<Equipo> Visitante() throws Exception 
-    {
+     */
+    public List<Equipo> Visitante() throws Exception {
         List<Equipo> lVisitante = new ArrayList<>();
         try {
             this.conectar();
@@ -301,5 +302,38 @@ public class CrudPartido extends Conexion {
             throw e;
         }
         return leq;
+
+    }
+
+    public List<Jornada>viewJ()throws Exception
+    {
+        List<Jornada>ljr=new ArrayList<>();
+        try 
+        {
+            this.conectar();
+            sql="select * from jornada";
+            pre=this.getCon().prepareCall(sql);
+            res=pre.executeQuery();
+            while (res.next()) 
+            {                
+                Jornada jor=new Jornada();
+                jor.setIdJornada(res.getInt("idjornada"));
+                jor.setIdEquipo(res.getInt("idequipo"));
+                jor.setNombre(res.getString("nombre"));
+                jor.setCantPar(res.getInt("catpartidos"));
+                jor.setVictorias(res.getInt("victorias"));
+                jor.setEmpate(res.getInt("empate"));
+                jor.setDerrota(res.getInt("derrotas"));
+                jor.setaFavor(res.getInt("afavor"));
+                jor.setEncontra(res.getInt("encontra"));
+                jor.setDiferencia(res.getInt("diferencia"));
+                jor.setPuntos(res.getInt("puntos"));
+                ljr.add(jor);
+            }
+        } catch (Exception e) 
+        {
+            throw e;
+        }
+        return ljr;
     }
 }

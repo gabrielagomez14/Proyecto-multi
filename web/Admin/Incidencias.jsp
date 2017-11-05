@@ -113,6 +113,9 @@
                             <option value="">Seleccione</option>
                             <option value="Caidas">Caidas</option>
                             <option value="Golpes en la Cabeza">Golpes en la Cabeza</option>
+                            <option value="Golpes en la Cabeza">Sobrecarga muscular</option>Otra lesión ósea
+                            <option value="Golpes en la Cabeza">Contractura muscular</option>
+                            <option value="Golpes en la Cabeza">Otra lesión ósea</option>
                         </select>
                     </div>
                 </div>
@@ -188,8 +191,8 @@
                         <button class="btn btn-lg btn-info" type="reset" value="Limpiar">Limpiar</button></form>
                     </th>
                     <td>
-                        <form name="reporte" action="reporte1">
-                            <button class="btn btn-lg btn-info" type="submit" value="Generar Reporte" name="btn">Generar Reporte</button>
+                        <form name="reporte" action="reporte1">&nbsp;
+                            <button class="btn btn-lg btn-toolbar" type="submit" value="Generar Reporte" name="btn">Generar Reporte</button>
                         </form> 
                     </td>
                 </tr>

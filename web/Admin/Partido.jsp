@@ -36,7 +36,7 @@ HttpSession sesion = request.getSession();
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <title>Mantenimiento de Partido</title>
         <script Language='JavaScript'>
-            function cargar(id, nom, parti, goles, fecha, cEqui, eqVisi,eqlocal, mVisi, mLoca, arbi, detalle)
+            function cargar(id, nom, parti, goles, fecha, cEqui, eqVisi,eqlocal, mVisi, mLoca,j ,arbi, detalle)
             {
                 document.frmPartido.id.value = id;
                 document.frmPartido.nombre.value = nom;
@@ -48,6 +48,7 @@ HttpSession sesion = request.getSession();
                 document.frmPartido.eqLocal.value = eqlocal;
                 document.frmPartido.mEqLo.value = mVisi;
                 document.frmPartido.mEqVisi.value = mLoca;
+                document.frmPartido.jornada.value = j;
                 document.frmPartido.arbitro.value = arbi;
                 document.frmPartido.detalle.value = detalle;
             }
@@ -246,18 +247,35 @@ HttpSession sesion = request.getSession();
                             </tr>
                             <tr>
                                 <td>
+                                    <label for="sel1" class="control-label col-xs-2">Jornada</label>
+                                </td>
+                                <td colspan="3">
+                                    <div class="col-xs-11" > 
+                                        <select class="form-control" id="sel1" name="jornada">
+                                            <%
+                                                List<Jornada> ljor = cpar.viewJ();
+                                                for (Jornada jo : ljor) {
+                                            %>
+                                            <option value="<%=jo.getIdJornada() %>"><%=jo.getNombre() %></option>
+                                            <%}%>
+                                        </select>   
+                                    </div> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
                                     <label for="sel1" class="control-label col-xs-2">Arbitro</label>
                                 </td>
                                 <td>
-                                    <div class="col-xs-15" > 
+                                    <div class="col-xs-15">
                                         <select class="form-control" id="sel1" name="arbitro">
                                             <%
                                                 List<Arbitro> lar = cpar.viewarbi();
                                                 for (Arbitro ar : lar) {
                                             %>
-                                            <option value="<%=ar.getIdArbitro()%>"><%=ar.getNombre()%></option>
+                                            <option value="<%=ar.getIdArbitro()%>"><%=ar.getNombre() %></option>
                                             <%}%>
-                                        </select>   
+                                        </select>  
                                     </div> 
                                 </td>
                                 <td>
@@ -316,6 +334,7 @@ HttpSession sesion = request.getSession();
             <th class="danger">Eq.Local</th>
             <th class="danger">Marc.Visitante</th>
             <th class="danger">Marc.Local</th>
+            <th class="danger">Jornada</th>
             <th class="danger">Arbitro</th>
             <th class="danger">Detalle</th>
             <th class="danger">seleccionar</th>
@@ -335,6 +354,7 @@ HttpSession sesion = request.getSession();
             <td class="success"><%=parti.getEqLocal()%></td>
             <td class="success"><%=parti.getMarcadorVisi()%></td>
             <td class="success"><%=parti.getMarcadorLocal()%></td>
+            <td class="success"><%=parti.getIdjornada()%></td>
             <td class="success"><%=parti.getIdArb()%></td>
             <td class="success"><%=parti.getIdDetalle()%></td>
             <td class="success"><a href="javascript:cargar(<%= parti.getIdPartido()%>,
@@ -347,6 +367,7 @@ HttpSession sesion = request.getSession();
                                    '<%=parti.getEqLocal()%>',
                                    '<%=parti.getMarcadorVisi()%>',
                                    '<%=parti.getMarcadorLocal()%>',
+                                   '<%=parti.getIdjornada()%>',
                                    '<%=parti.getIdArb()%>',
                                    '<%=parti.getIdDetalle()%>')">Seleccionar</a></td>
         </tr>

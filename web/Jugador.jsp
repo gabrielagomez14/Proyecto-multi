@@ -19,7 +19,7 @@
         <!-- complementos de javascrip-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <meta http-equiv="REFRESH" content="3; URL=http://localhost:26039/Futboll/faces/Jugador.jsp">
+        <meta http-equiv="REFRESH" content="5; URL=http://localhost:26039/Futboll/faces/Jugador.jsp">
         <link rel="stylesheet" href="../bootstrap-3.3.6-dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/tables.css" />
         <link rel="stylesheet"  type=" text/css" href="../css/MeStyle.css" >

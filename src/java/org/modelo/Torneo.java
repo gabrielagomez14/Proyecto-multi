@@ -24,12 +24,12 @@ public class Torneo
     private String descenso;
     private int idEq;
     private int idJugador;
-    private int idJornada;
+    private String idJornada;
 
     public Torneo() {
     }
 
-    public Torneo(int idTorneo, String nombre, String ubicacion, int catEq, String campeon, String goleador, String segLugar, String terLugar, String cuarLugar, String fechaIni, String fechaF, String descenso, int idEq, int idJugador, int idJornada) {
+    public Torneo(int idTorneo, String nombre, String ubicacion, int catEq, String campeon, String goleador, String segLugar, String terLugar, String cuarLugar, String fechaIni, String fechaF, String descenso, int idEq, int idJugador, String idJornada) {
         this.idTorneo = idTorneo;
         this.nombre = nombre;
         this.ubicacion = ubicacion;
@@ -159,13 +159,12 @@ public class Torneo
         this.idJugador = idJugador;
     }
 
-    public int getIdJornada() {
+    public String getIdJornada() {
         return idJornada;
     }
 
-    public void setIdJornada(int idJornada) {
+    public void setIdJornada(String idJornada) {
         this.idJornada = idJornada;
     }
 
-    
 }

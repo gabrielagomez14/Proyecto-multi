@@ -123,6 +123,10 @@
                             <option value="Delantero">Delantero</option>
                             <option value="Portero">Portero</option>
                             <option value="Defensa">Defensa</option>
+                            <option value="Medio Campo">Medio Campo</option>
+                            <option value="Mediocampista defensivo">Mediocampista defensivo</option>
+                            <option value="Mediocampista externo">Mediocampista externo</option>
+                            <option value="Lateral Volante">Lateral Volante</option>
                         </select>
                     </div>
                 </div>

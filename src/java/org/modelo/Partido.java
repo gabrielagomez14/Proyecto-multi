@@ -20,12 +20,13 @@ public class Partido
     private int marcadorVisi;
     private int marcadorLocal;
     private int idArb;
+    private int idjornada;
     private int idDetalle;
 
     public Partido() {
     }
 
-    public Partido(int idPartido, String nombre, String tipoPartido, int numGoles, String fecha, int idEquipo, String eqVisitante, String eqLocal, int marcadorVisi, int marcadorLocal, int idArb, int idDetalle) {
+    public Partido(int idPartido, String nombre, String tipoPartido, int numGoles, String fecha, int idEquipo, String eqVisitante, String eqLocal, int marcadorVisi, int marcadorLocal, int idArb, int idjornada, int idDetalle) {
         this.idPartido = idPartido;
         this.nombre = nombre;
         this.tipoPartido = tipoPartido;
@@ -37,6 +38,7 @@ public class Partido
         this.marcadorVisi = marcadorVisi;
         this.marcadorLocal = marcadorLocal;
         this.idArb = idArb;
+        this.idjornada = idjornada;
         this.idDetalle = idDetalle;
     }
 
@@ -126,6 +128,14 @@ public class Partido
 
     public void setIdArb(int idArb) {
         this.idArb = idArb;
+    }
+
+    public int getIdjornada() {
+        return idjornada;
+    }
+
+    public void setIdjornada(int idjornada) {
+        this.idjornada = idjornada;
     }
 
     public int getIdDetalle() {

@@ -44,7 +44,7 @@ public class CrudTorneo extends Conexion
                 tor.setDescenso(res.getString("descenso"));
                 tor.setIdEq(res.getInt("idequipo"));
                 tor.setIdJugador(res.getInt("idjugador"));
-                tor.setIdJornada(res.getInt("idjornada"));
+                tor.setIdJornada(res.getString("idjornada"));
                 ltor.add(tor);
             }
             
@@ -78,7 +78,7 @@ public class CrudTorneo extends Conexion
             pre.setString(12, tor.getDescenso());
             pre.setInt(13, tor.getIdEq());
             pre.setInt(14, tor.getIdJugador());
-            pre.setInt(15, tor.getIdJornada());
+            pre.setString(15, tor.getIdJornada());
             pre.executeUpdate();
         } catch (Exception e) 
         {
@@ -108,7 +108,7 @@ public class CrudTorneo extends Conexion
             pre.setString(11, tor.getDescenso());
             pre.setInt(12, tor.getIdEq());
             pre.setInt(13, tor.getIdJugador());
-            pre.setInt(14, tor.getIdJornada());
+            pre.setString(14, tor.getIdJornada());
             pre.setInt(15, tor.getIdTorneo());
             pre.executeUpdate();
         } catch (Exception e) 
@@ -220,39 +220,37 @@ public class CrudTorneo extends Conexion
         }
         return lju;
     }
-    
-    public List<Equipo>viewJornada()throws Exception
+    public List<Jornada>viewJornada()throws Exception
     {
-        List<Equipo>leq=new ArrayList<>();
+        List<Jornada>ljr=new ArrayList<>();
         try 
         {
             this.conectar();
-            sql="select * from equipo";
+            sql="select * from jornada";
             pre=this.getCon().prepareCall(sql);
             res=pre.executeQuery();
             while (res.next()) 
             {                
-                Equipo eq=new Equipo();
-                eq.setIdEq(res.getInt("idequipo"));
-                eq.setNombre(res.getString("nombre"));
-                eq.setNumJugadores(res.getInt("numjugadores"));
-                eq.setNumAmonestado(res.getInt("numamonestados"));
-                eq.setEmail(res.getString("correo"));
-                eq.setDireccion(res.getString("direccion"));
-                eq.setTipoEq(res.getString("tipoequipo"));
-                eq.setTelefono(res.getString("telefono"));
-                eq.setCantGoles(res.getInt("cantgoles"));
-                eq.setIdEntrenador(res.getInt("identrenador"));
-                eq.setIdJugador(res.getInt("idjugador"));
-                eq.setPuntaje(res.getInt("puntaje"));
-                leq.add(eq);
+                Jornada jor=new Jornada();
+                jor.setIdJornada(res.getInt("idjornada"));
+                jor.setIdEquipo(res.getInt("idequipo"));
+                jor.setNombre(res.getString("nombre"));
+                jor.setCantPar(res.getInt("catpartidos"));
+                jor.setVictorias(res.getInt("victorias"));
+                jor.setEmpate(res.getInt("empate"));
+                jor.setDerrota(res.getInt("derrotas"));
+                jor.setaFavor(res.getInt("afavor"));
+                jor.setEncontra(res.getInt("encontra"));
+                jor.setDiferencia(res.getInt("diferencia"));
+                jor.setPuntos(res.getInt("puntos"));
+                ljr.add(jor);
             }
-            
         } catch (Exception e) 
         {
             throw e;
         }
-        return leq;
+        return ljr;
     }
+    
     
 }

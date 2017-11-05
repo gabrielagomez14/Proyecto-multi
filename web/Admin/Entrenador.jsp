@@ -36,7 +36,7 @@ HttpSession sesion = request.getSession();
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <title>Mantenimiento de Entrenador</title>
         <script Language='JavaScript'>
-            function cargar(id,nom,ape,g,e,tel,correo,nome,ide)
+            function cargar(id,nom,ape,g,e,tel,correo,ide)
             {
                 document.frmEntrenador.id.value=id;
                 document.frmEntrenador.nombre.value=nom;
@@ -45,8 +45,7 @@ HttpSession sesion = request.getSession();
                 document.frmEntrenador.edad.value=e;
                 document.frmEntrenador.telefono.value=tel;
                 document.frmEntrenador.correo.value=correo;
-                document.frmEntrenador.codigoeq.value=ide;
-                
+                document.frmEntrenador.equipo.value=ide;
             }
         </script>
         <%

@@ -254,10 +254,10 @@ HttpSession sesion = request.getSession();
                         <td><label class="control-label col-xs-3" >Nombre de La Jornada</label></td>
                         <td>
                             <select class="form-control" id="sel1" name="jornada">
-                                <option value="">Seleccione</option>
+                                <option value="Seleccione">Seleccione</option>
                                 <%
-                                    List<Jornada> leq7 = ct.viewJornada();
-                                    for (Jornada jor : leq7) {
+                                    List<Jornada> ljr = ct.viewJornada();
+                                    for (Jornada jor : ljr) {
                                 %>
                                 <option value="<%=jor.getIdJornada()%>"><%=jor.getNombre()%></option>
                                 <% }%>

@@ -23,11 +23,6 @@ public class CrudJornada extends Conexion
         List<Jornada>ljr=new ArrayList<>();
         try 
         {
-            /*
-            select idPersona, dui, nombre, apellido, edad, genero,"
-                    + " telefono, direccion, pais.idPais, pais.codigoDePais, pais.nombrePais from persona "+
-                    "inner join pais on persona.idPais = pais.idPais
-            */
             this.conectar();
             sql="select * from jornada";
             pre=this.getCon().prepareCall(sql);

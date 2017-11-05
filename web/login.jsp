@@ -45,6 +45,7 @@
                             <div class="form-group">
                               <label for="password">Contrase&ntilde;a</label>
                               <input type="password" class="form-control" id="password" name="clave" placeholder="Contrase&ntilde;a" required>
+                              <span class=""></span>
                             </div>
                             <button type="submit" class="btn btn-success btn-block"   name="btnAcceder">Acceder</button>
                           </form>                 
@@ -66,7 +67,7 @@
             {
                 sesion.setAttribute("userName",request.getAttribute("userName"));
                 sesion.setAttribute("nivel", nivel);
-                response.sendRedirect("Admin/Arbitro.jsp");
+                response.sendRedirect("Admin/jugador.jsp");
             }else if (nivel==2) 
             {
                 sesion.setAttribute("userName",request.getAttribute("userName"));

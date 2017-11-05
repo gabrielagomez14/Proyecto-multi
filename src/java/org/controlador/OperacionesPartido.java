@@ -49,6 +49,7 @@ public class OperacionesPartido extends HttpServlet {
             par.setEqLocal(request.getParameter("eqLocal"));
             par.setMarcadorLocal(Integer.parseInt(request.getParameter("mEqVisi")));
             par.setMarcadorVisi(Integer.parseInt(request.getParameter("mEqLo")));
+            par.setIdjornada(Integer.parseInt(request.getParameter("jornada")));
             par.setIdArb(Integer.parseInt(request.getParameter("arbitro")));
             par.setIdDetalle(Integer.parseInt(request.getParameter("detalle")));
             if (request.getParameter("insertar")!=null) 
