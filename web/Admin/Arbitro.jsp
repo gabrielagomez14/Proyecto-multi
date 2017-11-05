@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="../css/tables.css" />
         <title>Mantenimiento de Arbitro</title>
         <script Language='JavaScript'>
-            function cargar(id, nom, ape, sue, cate, rol, eq, inci)
+            function cargar(id, nom, ape, sue, cate, rol, eq)
             {
                 document.frmArb.id.value = id;
                 document.frmArb.nombre.value = nom;
@@ -141,7 +141,7 @@
                                 List<Equipo> lEq = car.viewEq();
                                 for (Equipo eq : lEq) {
                             %>
-                            <option value="<%=eq.getIdEq()%>"><%=eq.getNombre()%></option>
+                            <option value="<%=eq.getIdEq()  %>"><%=eq.getNombre()%></option>
                             <%}%>
                         </select>
                     </div>
@@ -182,7 +182,7 @@
             <td class="success"><%= ve.getSueldo()%></td>
             <td class="success"><%= ve.getCategoria()%></td>
             <td class="success"><%= ve.getRolArbi()%></td>
-            <td class="success"><%=ve.getIdEquipo()%></td>
+            <td class="success"><%=ve.getNombreEq() %></td>
             <td class="success"><a href="javascript:cargar(<%=ve.getIdArbitro()%>,
                                    '<%=ve.getNombre()%>',
                                    '<%=ve.getApellido()%>',

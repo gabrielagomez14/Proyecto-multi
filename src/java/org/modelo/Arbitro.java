@@ -17,11 +17,12 @@ public class Arbitro
     private String categoria;
     private String rolArbi;
     private int idEquipo;
+    private String nombreEq;
 
     public Arbitro() {
     }
 
-    public Arbitro(int idArbitro, String nombre, String apellido, double sueldo, String categoria, String rolArbi, int idEquipo) {
+    public Arbitro(int idArbitro, String nombre, String apellido, double sueldo, String categoria, String rolArbi, int idEquipo, String nombreEq) {
         this.idArbitro = idArbitro;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -29,6 +30,7 @@ public class Arbitro
         this.categoria = categoria;
         this.rolArbi = rolArbi;
         this.idEquipo = idEquipo;
+        this.nombreEq = nombreEq;
     }
 
     public int getIdArbitro() {
@@ -87,5 +89,14 @@ public class Arbitro
         this.idEquipo = idEquipo;
     }
 
+    public String getNombreEq() {
+        return nombreEq;
+    }
+
+    public void setNombreEq(String nombreEq) {
+        this.nombreEq = nombreEq;
+    }
+
+    
     
 }

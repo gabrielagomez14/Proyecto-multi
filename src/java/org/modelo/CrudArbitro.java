@@ -34,8 +34,10 @@ public class CrudArbitro extends Conexion
                 ar.setApellido(res.getString("apellido"));
                 ar.setSueldo(res.getDouble("sueldo"));
                 ar.setCategoria(res.getString("categoria"));
-                ar.setRolArbi(res.getString("rol"));
+                ar.setRolArbi(res.getString("rol"));        
                 ar.setIdEquipo(res.getInt("idequipo"));
+
+                
                 lar.add(ar);
             }
             
@@ -174,5 +176,27 @@ public class CrudArbitro extends Conexion
             throw e;
         }
         return leq;
+    }
+    
+    public List<Equipo>viewName()throws Exception
+    {
+        List<Equipo>listName= new ArrayList<>();
+        try 
+        {
+            this.conectar();
+            sql="select nombre from equipo";
+            pre=this.getCon().prepareStatement(sql);
+            res=pre.executeQuery();
+            while (res.next()) 
+            {                
+                Equipo eq= new Equipo();
+                eq.setNombre(res.getString("nombre"));
+                listName.add(eq);
+            }
+        } catch (Exception e) 
+        {
+            throw e;
+        }
+        return listName;
     }
 }

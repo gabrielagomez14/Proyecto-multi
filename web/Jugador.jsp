@@ -55,7 +55,6 @@
                 </ul>
             </div>
         </nav>
-    <br><br><br>
     <header>
         <div class="container">
             <div class="col-md-12">
@@ -70,7 +69,7 @@
                     <!-- Contenedor de slides -->
                     <div class="carousel-inner">
                         <div class="item active">
-                            <img src="../Imagenes/caro1.1.jpg" alt="">
+                            <img src="../Imagenes/f.jpg" alt="" height="400">
                         </div>
 
                         <div class="item">

@@ -97,7 +97,7 @@ public class CrudJugador extends Conexion
         try 
         {
             this.conectar();
-            sql="DELETE FROM public.jugador WHERE idjugador=?";
+            sql="DELETE FROM public.jugador\n" +"WHERE idjugador=?";
             pre=this.getCon().prepareStatement(sql);
             pre.setInt(1, ju.getIdJugador());
             pre.executeUpdate();

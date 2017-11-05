@@ -336,4 +336,37 @@ public class CrudPartido extends Conexion {
         }
         return ljr;
     }
+    
+    public List<Jornada>viewJ2()throws Exception
+    {
+        List<Jornada>ljr=new ArrayList<>();
+        try 
+        {
+            this.conectar();
+            sql="select * from partido where eqvisitante";
+            pre=this.getCon().prepareCall(sql);
+            res=pre.executeQuery();
+            while (res.next()) 
+            {                
+                Jornada jor=new Jornada();
+                jor.setIdJornada(res.getInt("idjornada"));
+                jor.setIdEquipo(res.getInt("idequipo"));
+                jor.setNombre(res.getString("nombre"));
+                jor.setCantPar(res.getInt("catpartidos"));
+                jor.setVictorias(res.getInt("victorias"));
+                jor.setEmpate(res.getInt("empate"));
+                jor.setDerrota(res.getInt("derrotas"));
+                jor.setaFavor(res.getInt("afavor"));
+                jor.setEncontra(res.getInt("encontra"));
+                jor.setDiferencia(res.getInt("diferencia"));
+                jor.setPuntos(res.getInt("puntos"));
+                ljr.add(jor);
+            }
+        } catch (Exception e) 
+        {
+            throw e;
+        }
+        return ljr;
+    }
+    
 }
